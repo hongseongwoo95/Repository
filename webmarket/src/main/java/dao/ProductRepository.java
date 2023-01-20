@@ -7,9 +7,9 @@ import dto.Product;
 public class ProductRepository {
 	
 	private ArrayList<Product> listOfProducts = new ArrayList<Product>();
-	private static ProductRepository instance = new ProductRepository();
+	private static ProductRepository instance = new ProductRepository(); /* 싱글턴 패턴으로 객체생성 */
 
-	public static ProductRepository getInstance(){
+	public static ProductRepository getInstance() { /* 싱글턴 패턴으로 생성된 객체의 참조변수를 리턴하는 메서드 */
 		return instance;
 	} 
 
@@ -22,7 +22,7 @@ public class ProductRepository {
 		phone.setCondition("New");
 		phone.setFilename("P1234.png");
 
-		Product notebook = new Product("P1235", "LG PC �׷�", 1500000);
+		Product notebook = new Product("P1235", "LG PC �׷�", 1500000);
 		notebook.setDescription("13.3-inch, IPS LED display, 5rd Generation Intel Core processors");
 		notebook.setCategory("Notebook");
 		notebook.setManufacturer("LG");

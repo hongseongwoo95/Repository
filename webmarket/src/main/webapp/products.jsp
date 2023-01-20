@@ -21,9 +21,10 @@
 		</div>
 	</div>
 	<%
-		ProductRepository dao = ProductRepository.getInstance();
-		ArrayList<Product> listOfProducts = dao.getAllProducts();
-		/* ArrayList<Product> listOfProducts = productDAO.getAllProducts(); useBean으로 연결하던걸 싱글턴으로 대체했기 때문에 필요가 없어졌다. */ 
+		/* ProductRepository dao = ProductRepository.getInstance();
+		ArrayList<Product> listOfProducts = dao.getAllProducts(); */
+		/* ArrayList<Product> listOfProducts = productDAO.getAllProducts(); */ 
+		/* db로 연결해서 상품 목록을 받아오는 방식으로 바꾸었기 때문에 얘네들은 이제 필요가 없다. */
 	%>
 
 	<div class="container">
@@ -50,8 +51,6 @@
 			</div>
 		<%
 			}
-		%>
-		<%
 		if(rs != null)
 		{
 		rs.close();
