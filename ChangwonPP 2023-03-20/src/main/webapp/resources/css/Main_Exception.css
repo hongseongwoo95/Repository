@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 5%;
+}
+.navbar img{
+   width: 150px; 
+   height: 100px;
+}
+.home{
+    line-height: 100px;
+    margin-left: 10%;
+    font-size: large;
+}
+.warm{
+    display: flex;
+    justify-content: center;
+}
+.warm img{
+    width: 250px;
+    height: 250px;
+}
+.section{
+    text-align: center;
+}

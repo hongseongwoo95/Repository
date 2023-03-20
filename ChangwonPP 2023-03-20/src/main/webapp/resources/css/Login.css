@@ -1,0 +1,68 @@
+        /* 전체 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+            color: black;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: 0 auto;
+            margin-top: 150px;
+            width: 25%;
+
+        }
+
+        .home_icon {
+            display: flex;
+            justify-content: center;
+        }
+
+        .home_icon img {
+            width: 300px;
+            height: 200px;
+        }
+
+        input {
+            height: 50px;
+        }
+
+        .loginicon img {
+            width: 200px;
+            height: 70px;
+        }
+        .loginicon{
+            text-align: center;
+        }
+
+        .login_input {
+            width: 400px;
+           
+        }
+
+        .ID_PW {
+            text-align: center;
+            font-size: larger;
+        }
+
+        .join_box{
+            display: flex;
+            justify-content: center;
+        }
+
+        .join {
+            background-color: #0676f7;
+            padding: 10px;
+            border-radius: 5px;
+            width: 400px;
+        }
+        .join a {
+            color: white;
+            display: flex;
+            justify-content: center;
+        }
+        .form{
+            text-align: center;
+        }
