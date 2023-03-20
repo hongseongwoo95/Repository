@@ -1,0 +1,41 @@
+/* 컨테이너 */
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* 푸터 설정 */
+footer {
+    margin: 0 auto;
+}
+
+.footer_box {
+    display: flex;
+}
+
+.logo_box {
+    width: 50%;
+    margin-top: 10px;
+}
+
+.logo_box2 {
+    width: 50%;
+    display: flex;
+    margin: auto 0;
+}
+
+.footer_icon {
+    width: 20%;
+    height: 50px;
+    margin: 5px 0px;
+    margin-right: 5px;
+}
+
+.logo_box2 img {
+    width: 150px;
+    display: inline;
+}
+
+.logo_box_item {
+    margin: auto 0;
+}

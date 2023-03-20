@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
+.API {
+    border: 1px solid black;
+    height: 700px;
+    margin-top: 2px;
+}
