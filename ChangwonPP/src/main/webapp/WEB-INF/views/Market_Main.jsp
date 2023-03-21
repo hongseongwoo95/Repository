@@ -17,9 +17,9 @@
    <div class="container">
    <article>
                 <div class="side">
-                    <div class="sidetap"><a href="Info_Pointplace">포인트환전</a></div>
-                    <div class="sidetap"><a href="Market_Shipping">배송지주소</a></div>
-                    <div class="sidetap"><a href="Market_Upload">
+                    <div class="sidetap"><a href="InfoPointplace">포인트환전</a></div>
+                    <div class="sidetap"><a href="MarketShipping">배송지주소</a></div>
+                    <div class="sidetap"><a href="MarketUpload">
                             <div>판매하기</div>
                         </a></div>
                     <div class="sidetap"><button class="topbutton" value="맨위로"

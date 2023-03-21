@@ -54,10 +54,10 @@
                     <li><a href="#">3</a></li>
                     <li><a href="#">4</a></li>
                     <li><a href="#">5</a></li>
-                    <li><a href="#">...</a></li>
                     <li><a href="#">다음</a></li>
                 </ul>
             </div>
+            <div>글쓰기</div>
         </div>
     </section>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

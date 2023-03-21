@@ -10,6 +10,7 @@ public class Product {
    private String p_notice;
    private String p_brand;
    private String p_content;
+   
    private MultipartFile imageFile;
 
    public Product() {

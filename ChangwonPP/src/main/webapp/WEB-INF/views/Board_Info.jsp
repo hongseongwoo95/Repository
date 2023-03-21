@@ -46,17 +46,21 @@
                     </tr>
                 </tbody>
             </table>
-            <div class="page">
-                <ul class="page_select">
-                    <li><a href="#">이전</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">...</a></li>
-                    <li><a href="#">다음</a></li>
-                </ul>
+            <div class="tbot">
+                <div class="page">
+                    <ul class="page_select">
+                        <li><a href="#">이전</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">다음</a></li>
+                    </ul>
+                </div>
+                <c:if test="${m_id != null }">
+               	 	<div class="write"><a href="PostInfo" class="btn_write">글쓰기</a></div>
+                </c:if>
             </div>
         </div>
     </section>

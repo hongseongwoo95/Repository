@@ -28,21 +28,21 @@
             <h2><a href="#">최근 행사</a></h2><br><br>
 			<ul class="event">
 				<li class="event1">
-					<a href="Event_Info" class="link"> 
+					<a href="EventInfo" class="link"> 
 					<img src="<c:url value="/resources/images/Event/event1.jpg"/>"/>
 						<p class="p_title">진해 군항제</p>
 						<p class="p_date">군항 도시에서 함께 즐기는 세계 최대 벚꽃 축제</p>
 					</a>
 				</li>
 				<li class="event1">
-					<a href="Event_Info" class="link"> 
+					<a href="EventInfo" class="link"> 
 					<img src="<c:url value="/resources/images/Event/event2.jpg"/>" />
 						<p class="p_title">군악 의장 페스티벌</p>
 						<p class="p_date">대한민국 해군의 모항 진해에서 울리는 미래의 선율!</p>
 					</a>
 				</li>
 				<li class="event1">
-					<a href="Event_Info" class="link"> 
+					<a href="EventInfo" class="link"> 
 					<img src="<c:url value="/resources/images/Event/event3.jpg"/>" />
 						<p class="p_title">마산 국화축제</p>
 						<p class="p_date">국화 한 줄기에 천 오백여송이 꽃을 피운 천향여심</p>

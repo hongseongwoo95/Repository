@@ -67,15 +67,21 @@
  .th_title {
      width: 750px;
  }
-
- .page-nation li {
-     list-style: none;
- }
-
- .page-wrap {
-     text-align: center;
-     font-size: 0;
- }
+ 
+.tbot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.write{
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    border: 1px solid #d9ded9;
+    background: #f2f5f9;
+    padding: 5px;
+}
 
  .page_select {
      display: flex;

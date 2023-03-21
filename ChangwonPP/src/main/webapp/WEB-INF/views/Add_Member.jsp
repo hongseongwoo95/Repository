@@ -24,9 +24,9 @@
             <h4>아이디</h4>
             <form:input size="30" path="m_id" placeholder="아이디를 입력해주세요" class="input"/>
             <h4>비밀번호</h4>
-            <form:password size="30" path="m_pw" placeholder="비밀번호를 입력해주세요" minlength="4" maxlength="20" class="input"/>
+            <form:password size="30" path="m_pw" placeholder="비밀번호를 입력해주세요" minlength="8" maxlength="20" class="input"/>
             <h4>비밀번호 재확인</h4>
-            <form:password size="30" path="" placeholder="비밀번호를 다시 입력해주세요" class="input"/>
+            <form:password size="30" path="" placeholder="비밀번호를 다시 입력해주세요" minlength="8" maxlength="20" class="input"/>
             <h4>이름</h4>
             <form:input size="30" path="m_name" placeholder="이름을 입력해주세요" class="input"/>
             <h4>생년월일</h4>

@@ -29,31 +29,42 @@
                 </div>
             </div>
             <div>
-                <a href="Login" class="navbar_menu"><i class="fas fa-sign-in-alt"></i>로그인</a> |
-                <a href="AddMember" class="navbar_menu"><i class="fas fa-user"></i></i>회원가입</a>
-            </div>
+            <c:choose>
+				<c:when test="${m_id != null }">
+					<div class="memberinfo">
+						<p>${m_id }님 반갑습니다.
+						<div><a href="#">내 정보</a></div>
+						<div><a href="Logout" onclick="alert('로그아웃되었습니다.')">로그아웃</a></div>
+					</div>
+				</c:when>
+           		<c:otherwise>
+	                <a href="Login" class="navbar_menu"><i class="fas fa-sign-in-alt"></i>로그인</a> |
+	                <a href="AddMember" class="navbar_menu"><i class="fas fa-user"></i></i>회원가입</a>           		
+           		</c:otherwise>
+            </c:choose>
+             </div>
         </nav>
         <hr>
         <br>
         <div class="header2">
             <ul class="menu">
                 <li class="menu1">
-                    <a href="Board_Info">공지사항</a>
+                    <a href="BoardInfo">공지사항</a>
                 </li>
                 <li class="menu1">
                     <a href="Cardnews">카드뉴스</a>
                 </li>
                 <li class="menu1">
-                    <a href="Event_Page">행사</a>
+                    <a href="EventPage">행사</a>
                 </li>
                 <li class="menu1">
-                    <a href="Board_Employ">채용정보</a>
+                    <a href="BoardEmploy">채용정보</a>
                 </li>
                 <li class="menu1">
                     <a href="Bus">버스정보</a>
                 </li>
                 <li class="menu1">
-                    <a href="Market_Main">플리:마켓</a>
+                    <a href="MarketMain">플리:마켓</a>
                 </li>
             </ul>
         </div>
