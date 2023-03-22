@@ -60,13 +60,18 @@
      display: flex;
      align-items: center;
  }
- .memberinfo div{
-     margin-left: 10px;
-     padding: 5px;
-     border: 1px solid black;
-     font-weight: bold;
-     border-radius: 4px;
- }
+.memberinfo a {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px;
+    border: 1px solid black;
+    font-weight: bold;
+    border-radius: 4px;
+}
+.memberinfo a:hover {
+    background-color: #689f38;
+    color: white;
+}
 
  #search_01 {
      width: 400px;

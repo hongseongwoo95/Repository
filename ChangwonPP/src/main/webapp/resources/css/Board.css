@@ -45,16 +45,10 @@
  .tr1 th{
      padding: 5px;
  }
- .th_number{
-     padding: 0px 10px;
+ .tbody{
+ 	left: 5px;
  }
- .th_title, .td_title{
-     padding-left: 5%;
- }
- .td_title{
-     text-align: left;
- }
-
+ 
  .thead td {
      background: #B2B2B2;
  }
@@ -65,17 +59,26 @@
  }
 
  .th_title {
-     width: 750px;
+     width: 650px;
  }
-
- .page-nation li {
-     list-style: none;
+ .tb_title{
+ 	text-align: left;
  }
-
- .page-wrap {
-     text-align: center;
-     font-size: 0;
- }
+ 
+.tbot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.write{
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    border: 1px solid #d9ded9;
+    background: #f2f5f9;
+    padding: 5px;
+}
 
  .page_select {
      display: flex;

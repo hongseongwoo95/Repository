@@ -32,9 +32,9 @@
             <c:choose>
 				<c:when test="${m_id != null }">
 					<div class="memberinfo">
-						<p>${m_id }님 반갑습니다.
-						<div><a href="#">내 정보</a></div>
-						<div><a href="Logout" onclick="alert('로그아웃되었습니다.')">로그아웃</a></div>
+						<p>${m_name }님 반갑습니다.
+						<a href="#">내 정보</a>
+						<a href="Logout" onclick="alert('로그아웃되었습니다.')">로그아웃</a>
 					</div>
 				</c:when>
            		<c:otherwise>
@@ -49,7 +49,7 @@
         <div class="header2">
             <ul class="menu">
                 <li class="menu1">
-                    <a href="BoardInfo">공지사항</a>
+                    <a href="Board">공지사항</a>
                 </li>
                 <li class="menu1">
                     <a href="Cardnews">카드뉴스</a>
@@ -58,7 +58,7 @@
                     <a href="EventPage">행사</a>
                 </li>
                 <li class="menu1">
-                    <a href="BoardEmploy">채용정보</a>
+                    <a href="Board">채용정보</a>
                 </li>
                 <li class="menu1">
                     <a href="Bus">버스정보</a>

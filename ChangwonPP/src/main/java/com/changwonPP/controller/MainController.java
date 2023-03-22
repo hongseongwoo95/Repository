@@ -11,10 +11,7 @@ public class MainController {
 		return "Cardnews";
 	}
 	
-	@GetMapping("/EventPage")
-	public String EventMethod() {
-		return "Event_Page";
-	}
+
 	
 	
 	@GetMapping("/Bus")

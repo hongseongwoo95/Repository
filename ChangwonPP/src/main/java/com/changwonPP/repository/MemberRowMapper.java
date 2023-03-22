@@ -10,6 +10,8 @@ public class MemberRowMapper implements RowMapper<Member> { // DB를 조회해�
 	public Member mapRow(ResultSet rs, int rowNum) throws SQLException{
 		Member member = new Member();
 		member.setM_id(rs.getString(1));
+		member.setM_pw(rs.getString(2));
+		member.setM_name(rs.getString(3));
 		return member;
 	}
 }

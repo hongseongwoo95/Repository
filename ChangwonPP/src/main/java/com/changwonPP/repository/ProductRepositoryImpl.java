@@ -25,10 +25,10 @@ public class ProductRepositoryImpl implements ProductRepository{
 
    @Override // DB에 데이터를 삽입할 때 씀
    public void setNewProduct(Product product) {
-      System.out.println("들어옵니다");
-      String SQL =  "Insert INTO product(p_name, p_price, p_condition, p_notice, p_brand, p_content)"+
-              " VALUES (?,?,?,?,?,?)";
-      template.update(SQL, product.getP_name(),product.getP_price(),product.getP_condition(),product.getP_notice(),product.getP_brand(),product.getP_content());
+	  System.out.println(product.getP_img());
+      String SQL =  "Insert INTO product(p_img, p_name, p_price, p_condition, p_notice, p_brand, p_content)"+
+              " VALUES (?,?,?,?,?,?,?)";
+      template.update(SQL, product.getP_img(), product.getP_name(),product.getP_price(),product.getP_condition(),product.getP_notice(),product.getP_brand(),product.getP_content());
       
    }
 
