@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="./resources/css/Board_Detail.css" />
+<link rel="stylesheet" href="<c:url value="/resources/css/Board_Detail.css"/>" />
 <script src="https://kit.fontawesome.com/380c1469b3.js" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,27 +17,27 @@
     <div class="container">
         <article class="board">
             <div class="board_title">
-                <p>ChangwonPP 통합 공지사항 </p>
+                <p>${board.b_title }</p>
             </div>
             <div class="board_info">
-                <h3>작성자</h3>&nbsp;&nbsp;
-                <p>관리자</p>&nbsp;
-                <h3>작성일</h3>&nbsp;&nbsp;
-                <p>2023-02-13</p>&nbsp;
-                <h3>조회</h3>&nbsp;&nbsp;
-                <p>193회</p>&nbsp;
-                <h3>댓글</h3>&nbsp;&nbsp;
+                <h3>작성자</h3>&nbsp;
+                <p>${board.b_writer }</p>&nbsp;
+                <h3>작성일</h3>&nbsp;
+                <p>${board.b_date }</p>&nbsp;
+                <h3>조회</h3>&nbsp;
+                <p>0건</p>&nbsp;
+                <h3>댓글</h3>&nbsp;
                 <p>0건</p>
             </div>
             <hr>
             <div class="board_button">
                 <ul>
                     <li><a href="#">이전글</a></li>
-                    <li><a href="#">다음글</a></li>
-                    <li><a href="#">글목록</a></li>
+					<li><a href="#">다음글</a></li>
+                    <li><a href="/ChangwonPP/Board">글목록</a></li>
                 </ul>
             </div>
-            <div class="board_text">내용</div>
+            <div class="board_text">${board.b_content }</div>
         </article>
         <div class="comment">
             <p class="comment_title">댓글목록</p>

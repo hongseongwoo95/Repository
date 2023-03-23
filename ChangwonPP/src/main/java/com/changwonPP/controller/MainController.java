@@ -11,9 +11,6 @@ public class MainController {
 		return "Cardnews";
 	}
 	
-
-	
-	
 	@GetMapping("/Bus")
 	public String BusMethod() {
 		return "Bus";

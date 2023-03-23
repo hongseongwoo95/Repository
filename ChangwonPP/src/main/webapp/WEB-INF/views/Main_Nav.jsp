@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="./resources/css/Main_Nav.css" />
+<link rel="stylesheet" href="<c:url value="/resources/css/Main_Nav.css"/>"/>
 <script src="https://kit.fontawesome.com/380c1469b3.js" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@
             <div class="navbar">
                 <h1>
                     <span class="home_icon">
-                        <a href="/ChangwonPP/"><img src="./resources/images/Nav/Changwon PP logo1.png" class="mainlogo"></a>
+                        <a href="/ChangwonPP/"><img src="<c:url value="/resources/images/Nav/Changwon PP logo1.png"/>" class="mainlogo"></a>
                     </span>
                 </h1>
 				<div class="searchbar">
@@ -49,22 +49,19 @@
         <div class="header2">
             <ul class="menu">
                 <li class="menu1">
-                    <a href="Board">공지사항</a>
+                    <a href="<c:url value="/Board"/>">공지사항</a>
                 </li>
                 <li class="menu1">
-                    <a href="Cardnews">카드뉴스</a>
+                    <a href="<c:url value="/Cardnews"/>">카드뉴스</a>
                 </li>
                 <li class="menu1">
-                    <a href="EventPage">행사</a>
+                    <a href="<c:url value="/EventPage"/>">행사</a>
                 </li>
                 <li class="menu1">
-                    <a href="Board">채용정보</a>
+                    <a href="<c:url value="/Bus"/>">버스정보</a>
                 </li>
                 <li class="menu1">
-                    <a href="Bus">버스정보</a>
-                </li>
-                <li class="menu1">
-                    <a href="MarketMain">플리:마켓</a>
+                    <a href="<c:url value="/MarketMain"/>">플리:마켓</a>
                 </li>
             </ul>
         </div>

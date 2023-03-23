@@ -6,6 +6,7 @@ public class Board {
 	String b_content;
 	String b_writer;
 	String b_date;
+	String cal_date;
 	int b_views;
 	
 	public String getB_title() {
@@ -43,5 +44,11 @@ public class Board {
 	}
 	public void setB_views(int b_views) {
 		this.b_views = b_views;
+	}
+	public String getCal_date() {
+		return cal_date;
+	}
+	public void setCal_date(String cal_date) {
+		this.cal_date = cal_date;
 	}
 }

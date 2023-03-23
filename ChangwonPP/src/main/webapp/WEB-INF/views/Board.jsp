@@ -25,16 +25,16 @@
 						<th>작성자</th>
 						<th>작성일</th>
 						<th>조회수</th>
-					</tr>
+					</tr> 
 				</thead>
 				<tbody class="tbody">
-					<c:forEach var="board" items="${boardList}">
+					<c:forEach var="bd" items="${boardList}">
 						<tr>
-							<td class="b_num">${board.b_num}</td>
-							<td class="tb_title b_title"><a href="">${board.b_title}</a></td>
-							<td class="b_writer">${board.b_writer}</td>
-							<td class="b_date">${board.b_date}</td>
-							<td class="b_views">${board.b_views}</td>
+							<td class="b_num">${bd.b_num}</td>
+							<td class="tb_title b_title"><a href="BoardDetail/${bd.b_num} ">${bd.b_title}</a></td>
+							<td class="b_writer">${bd.b_writer}</td>
+							<td class="b_date">${bd.cal_date}</td>
+							<td class="b_views">${bd.b_views}</td>
 						</tr>
 					</c:forEach>
 				</tbody>
