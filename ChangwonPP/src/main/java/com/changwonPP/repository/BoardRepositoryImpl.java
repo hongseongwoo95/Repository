@@ -61,12 +61,32 @@ public class BoardRepositoryImpl implements BoardRepository {
 	public void searchPostDetail(String num, Model model) {
 		Board boardInfo = null; // 결과값을 담을 변수 생성
 		int numInt = Integer.parseInt(num); // model에 있는 String b_num을 형변환
+		
 		for(Board board:BoardList) { 
 			if(board.getB_num() == numInt) { // DAO 객체 안의 B_num과 model 안의 b_num이 일치하면 실행
 				boardInfo = board;
-				model.addAttribute("board", boardInfo);
+				increaseViews(num);
+				break;
 			}
 		}
+		if (boardInfo != null) {
+	        model.addAttribute("board", boardInfo);
+		}
+	}
+	
+	// 게시글 상세정보로 넘어갈 때 조회수를 1씩 증가시키는 기능
+	public void increaseViews(String num) {
+	    int numInt = Integer.parseInt(num);
+	    for (Board board : BoardList) {
+	        if (board.getB_num() == numInt) {
+	            board.setB_views(board.getB_views() + 1); // 조회수를 1 증가시키고 결과값을 board에 set.
+	            break;
+	        }
+	    }
+	    
+    String SQL = "UPDATE board SET b_views = b_views + 1 WHERE b_num = ?";
+    template.update(SQL, numInt);
+    
 	}
 
 	

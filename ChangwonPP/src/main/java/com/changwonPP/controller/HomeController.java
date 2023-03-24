@@ -10,4 +10,9 @@ public class HomeController {
 	public String HomeMethod() {
 		return "Main_Page";
 	}
+	
+	@RequestMapping("/MainPage") // 프로젝트를 run했을 때 기본적으로 표시되는 메인 페이지 Mapping
+	public String MainMethod() {
+		return "Main_Page";
+	}
 }

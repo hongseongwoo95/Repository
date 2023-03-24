@@ -24,10 +24,10 @@
                 <p>${board.b_writer }</p>&nbsp;
                 <h3>작성일</h3>&nbsp;
                 <p>${board.b_date }</p>&nbsp;
-                <h3>조회</h3>&nbsp;
-                <p>0건</p>&nbsp;
+                <h3>조회수</h3>&nbsp;
+                <p>${board.b_views }</p>&nbsp;
                 <h3>댓글</h3>&nbsp;
-                <p>0건</p>
+                <p>0</p>
             </div>
             <hr>
             <div class="board_button">

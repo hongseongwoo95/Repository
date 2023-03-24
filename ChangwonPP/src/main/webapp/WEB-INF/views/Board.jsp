@@ -29,7 +29,7 @@
 				</thead>
 				<tbody class="tbody">
 					<c:forEach var="bd" items="${boardList}">
-						<tr>
+						<tr class="tr2">
 							<td class="b_num">${bd.b_num}</td>
 							<td class="tb_title b_title"><a href="BoardDetail/${bd.b_num} ">${bd.b_title}</a></td>
 							<td class="b_writer">${bd.b_writer}</td>
@@ -59,40 +59,6 @@
 			</div>
 		</div>
 	</section>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
 	<br>
 	<br>
 </body>

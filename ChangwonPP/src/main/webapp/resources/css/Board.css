@@ -49,6 +49,10 @@
  	left: 5px;
  }
  
+ .tr2:hover {
+ 	background-color: #f9f9f9;
+ }
+ 
  .thead td {
      background: #B2B2B2;
  }

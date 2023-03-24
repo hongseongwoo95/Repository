@@ -18,7 +18,6 @@ public class MemberController {
 	
 	@GetMapping("/AddMember") // 회원가입 버튼 클릭시 페이지 매핑
 	public String AddMemberMethod(@ModelAttribute("NewMember") Member member) {
-
 		return "Add_Member";
 	}
 
@@ -43,6 +42,11 @@ public class MemberController {
 	public String LogoutMethod(HttpServletRequest req) {
 		memberDAO.Logout(req); // DAO 객체인 memberDAO 안의 ChkLogin 메서드 실행
 		return "redirect:/";
+	}
+	
+	@GetMapping("UpdateMember") // 회원수정 기능
+	public String UpdateMemberMethod(@ModelAttribute("Update") Member member) {
+		return "Update_Member";
 	}
 
 	@GetMapping("/FindID") // 아이디찾기 기능

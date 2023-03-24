@@ -22,7 +22,7 @@
                     </span>
                 </h1>
 				<div class="searchbar">
-                    <input type="text" placeholder="검색어를 입력해주세요" class="search" size="50">
+                    <input type="text" placeholder="검색어를 입력해주세요" class="search" size="42">
                     <a href="#">
                         <i class="fas fa-search"></i>
                     </a>
@@ -33,7 +33,7 @@
 				<c:when test="${m_id != null }">
 					<div class="memberinfo">
 						<p>${m_name }님 반갑습니다.
-						<a href="#">내 정보</a>
+						<a href="UpdateMember">내 정보</a>
 						<a href="Logout" onclick="alert('로그아웃되었습니다.')">로그아웃</a>
 					</div>
 				</c:when>
