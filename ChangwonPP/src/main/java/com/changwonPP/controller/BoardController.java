@@ -1,7 +1,5 @@
 package com.changwonPP.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +21,14 @@ public class BoardController {
 
 	@GetMapping("/Board") // 게시판 클릭시 매핑
 	public String BoardMethod(Model model) {
-	    List<Board> listOfBoards = boardDAO.getAllBoardList(); // boardDAO에 있는 메서드로 모든 게시글 목록을 가져와서 변수에 담음
-	    model.addAttribute("boardList", listOfBoards); // 변수에 담긴 값의 키를 boardList로 지정하고 model에 담는다.
-	    return "Board";
+	    boardDAO.getPerPageBorardList(1, model);
+	    return "redirect:/Board/1";
+	}
+	
+	@GetMapping("/Board/{num}") // 각 게시판 갯수 제한하는 기능
+	public String PerPageMethod(@PathVariable int num, Model model) {
+		boardDAO.getPerPageBorardList(num, model);
+		return "Board";
 	}
 	@GetMapping("/BoardDetail/{num}") // 게시글 상세보기 기능. a태그에서 el로 보낸 값이 여기로 들어옴.
 	public String BoardDetailMethod(@PathVariable String num, Model model) {

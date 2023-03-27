@@ -44,5 +44,7 @@
             <p class="comment_null">등록된 댓글이 없습니다.</p>
         </div>
     </div>
+    <br>
+    <jsp:include page="Main_Footer.jsp" />
 </body>
 </html>

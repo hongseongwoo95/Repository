@@ -5,8 +5,8 @@ public class Board {
 	String b_title;
 	String b_content;
 	String b_writer;
-	String b_date;
-	String cal_date;
+	String b_date; // 실제 게시글 작성일. 게시글 상세보기에서 볼 수 있음.
+	String cal_date; // 게시판에 표시되는 날짜에 따라 변화하는 게시글 작성일을 구현하기 위해 만든 변수. db에는 저장되지 않음.
 	int b_views;
 	
 	public String getB_title() {

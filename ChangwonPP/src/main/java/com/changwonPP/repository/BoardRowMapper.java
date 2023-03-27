@@ -2,9 +2,7 @@ package com.changwonPP.repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import org.springframework.jdbc.core.RowMapper;
-
 import com.changwonPP.domain.Board;
 
 public class BoardRowMapper implements RowMapper<Board> {

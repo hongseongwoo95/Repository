@@ -38,8 +38,8 @@
 					</div>
 				</c:when>
            		<c:otherwise>
-	                <a href="Login" class="navbar_menu"><i class="fas fa-sign-in-alt"></i>로그인</a> |
-	                <a href="AddMember" class="navbar_menu"><i class="fas fa-user"></i></i>회원가입</a>           		
+	                <a class="navbar_menu" href="<c:url value="/Login"/>" ><i class="fas fa-sign-in-alt"></i>로그인</a> |
+	                <a class="navbar_menu" href="<c:url value="/AddMember"/>" ><i class="fas fa-user"></i>회원가입</a>           		
            		</c:otherwise>
             </c:choose>
              </div>
