@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin_Post_Info</title>
+<title>Board_Post</title>
 </head>
 
 <body>
@@ -21,13 +21,14 @@
             <form:input path="b_title" size="40" placeholder="제목을 입력해주세요" class="post_title_input"/>
             <p class="post_text">내용</p>
             <form:textarea path="b_content" rows="35" placeholder="내용을 입력해주세요"></form:textarea>
-            <hr>
             <div class="btn-right">
                 <input type="submit" value="등록" class="btn-submit">
-                <input type="reset" value="취소" class="btn-reset">
+                <a href="<c:url value="/Board"/>" class="btn-reset">취소</a>
             </div>
         </form:form>
     </div>
+    <br><br><br><br><br><br><br><br><br>
+    <jsp:include page="Main_Footer.jsp" />
     <!-- textarea에 필요시 wysiwyg 에디터 적용할 것. (네이버 스마트 에디터 2.0 or API)  -->
 </body>
 

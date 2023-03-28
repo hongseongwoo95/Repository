@@ -4,6 +4,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class Product {
       private MultipartFile imgfile;
+      private int p_number;
       private String p_img;
       private String p_name;
       private int p_price;
@@ -27,6 +28,14 @@ public class Product {
       public void setImgfile(MultipartFile imgfile) {
          this.imgfile = imgfile;
       }
+      public int getP_number() {
+  		return p_number;
+  	 }
+
+
+  	 public void setP_number(int p_number) {
+  		this.p_number = p_number;
+  	 }
 
 
       public String getP_img() {

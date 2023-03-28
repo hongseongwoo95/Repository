@@ -1,13 +1,14 @@
 package com.changwonPP.domain;
 
 public class Board {
-	int b_num;
-	String b_title;
-	String b_content;
-	String b_writer;
-	String b_date; // 실제 게시글 작성일. 게시글 상세보기에서 볼 수 있음.
-	String cal_date; // 게시판에 표시되는 날짜에 따라 변화하는 게시글 작성일을 구현하기 위해 만든 변수. db에는 저장되지 않음.
-	int b_views;
+	private int b_num;
+	private String b_title;
+	private String b_content;
+	private String b_writer;
+	private String b_date; // 실제 게시글 작성일. 게시글 상세보기에서 볼 수 있음.
+	private String cal_date; // 게시판에 표시되는 날짜에 따라 변화하는 게시글 작성일을 구현하기 위해 만든 변수. db에는 저장되지 않음.
+	private int b_views;
+
 	
 	public String getB_title() {
 		return b_title;

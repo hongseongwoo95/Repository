@@ -41,12 +41,30 @@
 			<div class="tbot">
 				<div class="page">
 					<ul class="page_select">
-						<li><a href="#" class="prev-page">이전</a></li>
-						<li><a href="#" class="next-page">다음</a></li>
+						<c:if test="${paging.prev eq true}">
+					        <li><a href='<c:url value="/Board/${paging.startPage - 1}"/>'>&lt;</a></li>
+					    </c:if>
+						<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="num">
+							<li>
+								<a href='<c:url value="/Board/${num }"/>'>
+									<c:choose>
+										<c:when test="${page==num }">
+											<font class="activepage">${num }</font>
+										</c:when>
+										<c:otherwise>
+											<font>${num }</font>
+										</c:otherwise>
+									</c:choose>					
+								</a>
+							</li>
+						</c:forEach>
+						<c:if test="${paging.next eq true }">
+					        <li><a href='<c:url value="/Board/${paging.endPage + 1}"/>'>&gt;</a></li>
+					    </c:if>
 					</ul>
 				</div>
 				<c:if test="${m_id != null }">
-					<div class="write">
+					<div class="post">
 						<a href="<c:url value="/Post"/>" class="btn_write">글쓰기</a>
 					</div>
 				</c:if>
@@ -55,34 +73,6 @@
 	</section>
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<jsp:include page="Main_Footer.jsp" />
-	<script>
-		var prevBtn = document.querySelector('.page_select li:first-child a');
-		var nextBtn = document.querySelector('.page_select li:last-child a');
-	
-		function getCurrentPageNum() {
-			var uri = window.location.href;
-			var pageNum = uri.substr(uri.lastIndexOf('/') + 1);
-			return pageNum;
-		}
-	
-		prevBtn.addEventListener('click', function(e) {
-			e.preventDefault(); // 기본 동작(링크 이동) 막기
-			var pageNum = getCurrentPageNum();
-			pageNum = parseInt(pageNum) - 1;
-			if (pageNum > 0) {
-				window.location.href = "/ChangwonPP/Board/" + pageNum;
-			} else {
-				window.location.href = "/ChangwonPP/Board/1";
-			}
-		});
-	
-		nextBtn.addEventListener('click', function(e) {
-			e.preventDefault(); // 기본 동작(링크 이동) 막기
-			var pageNum = getCurrentPageNum();
-			pageNum = parseInt(pageNum) + 1;
-			window.location.href = "/ChangwonPP/Board/" + pageNum;
-		});
-	</script>
 </body>
 
 </html>

@@ -15,9 +15,4 @@ public class MainController {
 	public String BusMethod() {
 		return "Bus";
 	}
-	
-	@GetMapping("/MarketMain")
-	public String MarketMainMethod() {
-		return "Market_Main";
-	}
 }

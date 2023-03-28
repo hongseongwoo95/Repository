@@ -75,7 +75,7 @@
     align-items: center;
     position: relative;
 }
-.write{
+.post{ /* 페이지 버튼에 hover하면 발생 */
     position: absolute;
     right: 10px;
     top: 20px;
@@ -91,7 +91,7 @@
      margin-top: 20px;
  }
 
- .page_select a {
+ .page_select a { /* 페이지 버튼 안에 있는 a태그 */
      display: block;
      margin: 0 3px;
      float: left;
@@ -104,10 +104,13 @@
      font-size: 13px;
      color: black;
      text-decoration: none;
-     font-weight: bold;
  }
 
- .page_select a:hover {
-     background-color: gray;
-     color: white;
+ .page_select a:hover {  /* 페이지 버튼에 hover하면 발생 */
+     background-color: whitesmoke;
+ }
+ .activepage{
+ 	font-weight: bold;
+    color: #d31900;
+    
  }

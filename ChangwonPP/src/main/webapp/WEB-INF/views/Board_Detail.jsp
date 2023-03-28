@@ -21,28 +21,27 @@
             </div>
             <div class="board_info">
                 <h3>작성자</h3>&nbsp;
-                <p>${board.b_writer }</p>&nbsp;
+                <p>${board.b_writer }</p>&nbsp;<span>|</span>&nbsp;
                 <h3>작성일</h3>&nbsp;
-                <p>${board.b_date }</p>&nbsp;
+                <p>${board.b_date }</p>&nbsp;<span>|</span>&nbsp;
                 <h3>조회수</h3>&nbsp;
-                <p>${board.b_views }</p>&nbsp;
-                <h3>댓글</h3>&nbsp;
-                <p>0</p>
+                <p>${board.b_views }</p>
+
             </div>
             <hr>
             <div class="board_button">
                 <ul>
-                    <li><a href="#">이전글</a></li>
-					<li><a href="#">다음글</a></li>
+                	<%-- <c:if test="${boardlist[0].b_num < 1}"> --%>
+                    <li><a href="<c:url value="/BoardDetail/${prevNum}"/>">이전글</a></li>
+                   <%-- </c:if> --%>
+                    <c:if test="${num <= paging.totalCount}">
+					  <li><a href="<c:url value="/BoardDetail/${nextNum}"/>">다음글</a></li>
+					</c:if>
                     <li><a href="/ChangwonPP/Board">글목록</a></li>
                 </ul>
             </div>
             <div class="board_text">${board.b_content }</div>
         </article>
-        <div class="comment">
-            <p class="comment_title">댓글목록</p>
-            <p class="comment_null">등록된 댓글이 없습니다.</p>
-        </div>
     </div>
     <br>
     <jsp:include page="Main_Footer.jsp" />

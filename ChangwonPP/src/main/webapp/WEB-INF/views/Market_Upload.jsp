@@ -11,16 +11,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="./resources/js/Market_Upload.js"></script>
 <script src="https://kit.fontawesome.com/380c1469b3.js" crossorigin="anonymous"></script>
-<title>Flea_Upload</title>
+<title>Market_Upload</title>
 </head>
 <body>
    <jsp:include page="Main_Nav.jsp" />
    <div class="container">
       <article>
         <div class="side">
-                    <div class="sidetap"><a href="Info_Pointplace">포인트환전</a></div>
-                    <div class="sidetap"><a href="Market_Shipping">배송지주소</a></div>
-                    <div class="sidetap"><a href="Market_Upload">판매하기</a></div>
+                    <div class="sidetap"><a href="InfoPointplace">포인트환전</a></div>
+                    <div class="sidetap"><a href="MarketShipping">배송지주소</a></div>
+                    <div class="sidetap"><a href="MarketUpload">판매하기</a></div>
                     <div class="sidetap"><button class="topbutton" value="맨위로"
                             onClick="javascript:window.scrollTo(0,0)">맨위로</button></div>
                 </div>

@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 
 import com.changwonPP.domain.Board;
+import com.changwonPP.domain.Criteria;
 
 @Repository
 public class BoardRepositoryImpl implements BoardRepository {
@@ -47,7 +49,10 @@ public class BoardRepositoryImpl implements BoardRepository {
 	    model.addAttribute("boardList",boardList);
 	}
 	
-	 // DB에서 받아온 날짜를 DATE만 남게 가공하는 기능
+
+	
+	
+	 // DB에서 받아온 날짜를 DATE만 남게 가공하는 기능. getPerPageBorardList 메서드 안에서 호출됨.
 	public String getPostDateOfBoard(String b_date, LocalDate now) {
 		String result = null; // 날짜 담을 변수 생성
 		LocalDate targetDate = LocalDate.parse(b_date, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")); // 날짜만
@@ -62,10 +67,23 @@ public class BoardRepositoryImpl implements BoardRepository {
 		return result;
 	}	
 	
+	@Override // 게시판 페이징 기능 중 총 게시글 갯수 구함.
+	public int getBoardListCnt() throws Exception {
+	    String sql = "SELECT COUNT(*) FROM board";
+	    return template.queryForObject(sql, Integer.class);
+	}
+	
+	@Override // 게시판 페이징 기능 중 한 페이지에 표시할 게시글의 시작 번호와 끝 번호를 구함.
+	public List<Map<String, Object>> getBoardList(Criteria cri) throws Exception {
+	    return template.queryForList("SELECT * FROM board ORDER BY b_num DESC LIMIT ?, ?", cri.getPageStart(), cri.getPerPageNum());
+	}
+	
 	@Override // 게시글 제목을 클릭해서 게시글 상세정보로 넘어갈 때 글 번호에 맞는 게시글을 불러오는 기능
 	public void searchPostDetail(String num, Model model) {
 		Board boardInfo = null; // 결과값을 담을 변수 생성
 		int numInt = Integer.parseInt(num); // model에 있는 String b_num을 형변환
+		int prevNum = Integer.parseInt(num) - 1;
+		int nextNum = Integer.parseInt(num) + 1;
 		
 		for(Board board:BoardList) { 
 			if(board.getB_num() == numInt) { // DAO 객체 안의 B_num과 model 안의 b_num이 일치하면 실행
@@ -74,12 +92,25 @@ public class BoardRepositoryImpl implements BoardRepository {
 				break;
 			}
 		}
-		if (boardInfo != null) {
-	        model.addAttribute("board", boardInfo);
-		}
+		getAllPageList(num, model);
+		model.addAttribute("num", num);
+        model.addAttribute("board", boardInfo);	
 	}
 	
-	// 게시글 상세정보로 넘어갈 때 조회수를 1씩 증가시키는 기능
+	// 게시판 상세보기에서 이전글, 다음글 버튼 기능
+	public void getAllPageList(String num, Model model) { 
+		int prevNum = Integer.parseInt(num) - 1;
+		int nextNum = Integer.parseInt(num) + 1;
+		List<Board> boardList = template.query("SELECT * FROM board ORDER BY b_num DESC", new BoardRowMapper());	
+		System.out.println("이전글, 다음글 검색 기능 함수 호출중");
+		model.addAttribute("boardlist", boardList);
+		
+		model.addAttribute("prevNum", prevNum);
+		model.addAttribute("nextNum", nextNum);
+		
+	}
+	
+	// 게시글 상세정보로 넘어갈 때 조회수를 1씩 증가시키는 기능. searchPostDetail 메서드 안에서 호출됨
 	public void increaseViews(String num) {
 	    int numInt = Integer.parseInt(num);
 	    for (Board board : BoardList) {

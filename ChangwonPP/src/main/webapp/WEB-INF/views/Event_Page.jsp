@@ -22,6 +22,7 @@
                     <p class="alarm_title">D-15</p>
                     <p class="alarm_content">진해 군항제 2월 15일 ~ 27일</p>
                     <p class="alarm_content">장소 : 진해 로타리</p>
+                    <a href="Event_Upload">업로드가기</a> <!-- 나중에 위치 옮겨야됨 -->
                 </div>
             </div>
             <br>

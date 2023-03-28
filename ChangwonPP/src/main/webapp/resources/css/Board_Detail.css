@@ -33,6 +33,9 @@
             align-items: center;
             margin-bottom: 10px;
         }
+        .board_info span {
+        	color: grey;
+        }
 
         .board_button {
             display: flex;
@@ -54,23 +57,5 @@
         .board_text {
             border: 1px solid black;
             height: 500px;
-            padding: 10px;
-        }
-
-        .comment {
-            width: 60%;
-            height: 100px;
-            margin: 0 auto;
-            border: 1px solid black;
-            background-color: #f5f8f9;
-        }
-
-        .comment_null {
-            display: flex;
-            justify-content: center;
-            vertical-align: center;
-        }
-
-        .comment_title {
             padding: 10px;
         }
