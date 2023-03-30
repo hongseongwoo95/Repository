@@ -21,13 +21,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.changwonPP.domain.Event;
 import com.changwonPP.domain.Event_files;
-import com.changwonPP.repository.EventRepositoryImpl;
+import com.changwonPP.repository.EventRepository;
 
 @Controller
 public class EventController {
    
    @Autowired // 게시글 관리에 사용할 DAO 객체 생성
-   private EventRepositoryImpl EventDAO;
+   private EventRepository EventDAO;
    
    @GetMapping("/Event_Upload")
    public String getEventUpload(@ModelAttribute("Event") Event event) {

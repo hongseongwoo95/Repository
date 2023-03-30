@@ -12,6 +12,7 @@ public class Member {
 	private String m_phone2;
 	private String m_phone3;
 	private String m_sex;
+	private int m_type;
 	
 	public Member() {
 		super();
@@ -104,5 +105,13 @@ public class Member {
 
 	public void setM_sex(String m_sex) {
 		this.m_sex = m_sex;
+	}
+
+	public int getM_type() {
+		return m_type;
+	}
+
+	public void setM_type(int m_type) {
+		this.m_type = m_type;
 	}
 }

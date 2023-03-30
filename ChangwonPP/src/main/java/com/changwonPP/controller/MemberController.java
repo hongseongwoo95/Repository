@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.changwonPP.domain.Member;
-import com.changwonPP.repository.MemberRepositoryImpl;
+import com.changwonPP.repository.MemberRepository;
 
 @Controller // 멤버와 관련된 로그인, 회원가입 등 Mapping 설정
 public class MemberController {
 	@Autowired // 멤버 관리에 사용할 DAO 객체 생성
-	private MemberRepositoryImpl memberDAO; 
+	private MemberRepository memberDAO; 
 	
 	@GetMapping("/AddMember") // 회원가입 버튼 클릭시 페이지 매핑
 	public String AddMemberMethod(@ModelAttribute("NewMember") Member member) {

@@ -30,15 +30,15 @@
             </div>
             <hr>
             <div class="board_button">
-                <ul>
-                	<%-- <c:if test="${boardlist[0].b_num < 1}"> --%>
-                    <li><a href="<c:url value="/BoardDetail/${prevNum}"/>">이전글</a></li>
-                   <%-- </c:if> --%>
-                    <c:if test="${num <= paging.totalCount}">
-					  <li><a href="<c:url value="/BoardDetail/${nextNum}"/>">다음글</a></li>
+				<ul>
+					<c:if test="${prevNum > 0}">
+						<li><a href="<c:url value='/BoardDetail/${prevNum}'/>">이전글</a></li>
 					</c:if>
-                    <li><a href="/ChangwonPP/Board">글목록</a></li>
-                </ul>
+					<c:if test="${nextNum <= boardlist.size()}">
+						<li><a href="<c:url value='/BoardDetail/${nextNum}'/>">다음글</a></li>
+					</c:if>
+					<li><a href="/ChangwonPP/Board">글목록</a></li>
+				</ul>
             </div>
             <div class="board_text">${board.b_content }</div>
         </article>

@@ -31,6 +31,34 @@
         .alarm_content {
             font-size: 30px;
         }
+        
+        .topbtn{
+        	display: flex;
+        	justify-content: space-between;
+        	margin-bottom: 15px;
+        }
+        
+        .upload{
+        	display: inline-block;
+            margin-bottom: 0;
+            font-weight: normal;
+            text-align: center;
+            vertical-align: middle;
+            touch-action: manipulation;
+            cursor: pointer;
+            background-image: none;
+            white-space: nowrap;
+            font-size: 12px;
+            user-select: none;
+            border-width: 1px;
+            border-style: solid;
+            background-color: rgb(255, 255, 255);
+            border-color: rgb(204, 204, 204);
+            border-image: initial;
+            padding: 6px 9px;
+            border-radius: 2px;
+            color: rgb(51, 51, 51);
+        }
 
         .event {
             display: flex;

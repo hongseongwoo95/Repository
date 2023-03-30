@@ -38,11 +38,11 @@ public class MemberRepositoryImpl implements MemberRepository {
 		String m_birthday = member.getM_birthday1() + "-" + member.getM_birthday2() + "-" + member.getM_birthday3();
 		String m_phone = member.getM_phone1() + "-" + member.getM_phone2() + "-" + member.getM_phone3();
 
-		String SQL = "Insert INTO member(m_id, m_pw, m_name, m_birthday, m_mail, m_phone, m_sex)"
-				+ " VALUES (?,?,?,?,?,?,?)";
+		String SQL = "Insert INTO member(m_id, m_pw, m_name, m_birthday, m_mail, m_phone, m_sex, m_type)"
+				+ " VALUES (?,?,?,?,?,?,?,?)";
 
 		template.update(SQL, member.getM_id(), member.getM_pw(), member.getM_name(), m_birthday, member.getM_mail(),
-				m_phone, member.getM_sex());
+				m_phone, member.getM_sex(), 1);
 	}
 
 	@Override // 로그인 처리 기능 구현
@@ -56,6 +56,7 @@ public class MemberRepositoryImpl implements MemberRepository {
 	        if (chkmember != null && chkmember.getM_id().equals(member.getM_id())) { // 받아온 값이 null이 아니거나 view에서 입력한 값과 SQL 구문으로 조회한 값이 일치하면 if 실행
 	            String id = chkmember.getM_id(); // m_id 값 가져오기
 	            String username = chkmember.getM_name(); // m_name 값 가져오기
+	            int type = chkmember.getM_type(); // 회원 권한을 조정하는 m_tpye 값 가져오기(1=일반회원, 2=관리자)
 	            System.out.println("로그인 성공");
 		        System.out.println("입력한 아이디: " + member.getM_id());
 		        System.out.println("입력한 비밀번호: " + member.getM_pw());
@@ -63,6 +64,8 @@ public class MemberRepositoryImpl implements MemberRepository {
 	            System.out.println(username+"님 환영합니다.");
 	            session.setAttribute("m_id", id); // 세션에 m_id 저장
 	            session.setAttribute("m_name", username); // 세션에 m_name 저장
+	            session.setAttribute("m_type", type); // 세션에 m_type 저장
+	            
 	        } 
 	        else {
 	            System.out.println("로그인 실패");
@@ -74,6 +77,7 @@ public class MemberRepositoryImpl implements MemberRepository {
 	        System.out.println("database에 일치하는 회원정보가 없습니다.");
 	        System.out.println("입력한 아이디: " + member.getM_id());
 	        System.out.println("입력한 비밀번호: " + member.getM_pw());
+	        
 	    }
 	}
 

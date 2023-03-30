@@ -12,7 +12,7 @@ import com.changwonPP.domain.Criteria;
 
 public interface BoardRepository {
 	void addNewPost(Board board, HttpServletRequest req);
-	void searchPostDetail(String  num, Model model);
+	void searchBoardDetail(String  num, Model model);
 	void getPerPageBorardList(int page, Model model);
 	int getBoardListCnt() throws Exception;
 	List<Map<String, Object>> getBoardList(Criteria cri) throws Exception;

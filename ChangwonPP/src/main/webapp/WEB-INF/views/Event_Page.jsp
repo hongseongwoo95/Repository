@@ -22,11 +22,16 @@
                     <p class="alarm_title">D-15</p>
                     <p class="alarm_content">진해 군항제 2월 15일 ~ 27일</p>
                     <p class="alarm_content">장소 : 진해 로타리</p>
-                    <a href="Event_Upload">업로드가기</a> <!-- 나중에 위치 옮겨야됨 -->
+                    
                 </div>
             </div>
             <br>
-            <h2><a href="#">최근 행사</a></h2><br><br>
+            <div class="topbtn">
+	            <h2><a href="#">최근 행사</a></h2>
+	            <c:if test="${m_id != null && m_type == 2 }">
+	            	<a href="Event_Upload" class="upload">업로드</a>
+	            </c:if>
+            </div>
 			<ul class="event">
 				<li class="event1">
 					<a href="EventInfo" class="link"> 

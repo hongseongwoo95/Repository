@@ -20,7 +20,7 @@
             <hr><br>
         <form:form action="LoginSubmit" modelAttribute="Login" class="form" method="post">
             <form:input path="m_id" placeholder="아이디" class="login_input"/>
-            <form:password path="m_pw" minlength="8" maxlength="20" placeholder="비밀번호 8자~20자" class="login_input"/>
+            <form:password path="m_pw" minlength="8" maxlength="20" placeholder="비밀번호" class="login_input"/>
             <input type="submit" value="로그인" class="login_input">
         </form:form>
 

@@ -17,13 +17,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.changwonPP.domain.Board;
 import com.changwonPP.domain.Criteria;
 import com.changwonPP.domain.Paging;
-import com.changwonPP.repository.BoardRepositoryImpl;
+import com.changwonPP.repository.BoardRepository;
 
 @Controller
 public class BoardController {
 	
 	@Autowired // DAO 객체 의존성 주입
-	private BoardRepositoryImpl boardDAO; 
+	private BoardRepository boardDAO; 
 	
 	@Autowired // Criteria 객체 의존성 주입
 	private Criteria cri; 
@@ -66,7 +66,8 @@ public class BoardController {
 	@GetMapping("/BoardDetail/{num}") // 게시글 상세보기 기능
 	public String BoardDetailMethod(@PathVariable String num, Model model) {
 		
-		boardDAO.searchPostDetail(num, model);
+		boardDAO.searchBoardDetail(num, model);
+		
 		return "Board_Detail";
 	}
 	

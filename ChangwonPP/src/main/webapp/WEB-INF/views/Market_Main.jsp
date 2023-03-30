@@ -24,9 +24,11 @@
 				<div class="sidetap">
 					<a href="MarketShipping">배송지주소</a>
 				</div>
-				<div class="sidetap">
-					<a href="MarketUpload"><div>판매하기</div></a>
-				</div>
+				<c:if test="${m_id != null && m_type != 0 }">
+					<div class="sidetap">		
+						<a href="MarketUpload"><div>판매하기</div></a>
+					</div>
+				</c:if>
 				<div class="sidetap">
 					<button class="topbutton" value="맨위로"
 						onClick="javascript:window.scrollTo(0,0)">맨위로</button>

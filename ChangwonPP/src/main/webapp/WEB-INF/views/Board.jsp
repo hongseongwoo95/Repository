@@ -63,7 +63,7 @@
 					    </c:if>
 					</ul>
 				</div>
-				<c:if test="${m_id != null }">
+				<c:if test="${m_id != null && m_type == 2 }">
 					<div class="post">
 						<a href="<c:url value="/Post"/>" class="btn_write">글쓰기</a>
 					</div>
