@@ -15,13 +15,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.changwonPP.domain.Product;
+import com.changwonPP.repository.ProductRepository;
 import com.changwonPP.repository.ProductRepositoryImpl;
 
 @Controller
 public class MarketController {
 
-	@Autowired // 제품 DAO 객체 생성
-	private ProductRepositoryImpl productDAO;
+	@Autowired // 제품 DAO 객체 의존성 주입
+	private ProductRepository productDAO;
 
 	@GetMapping("/MarketUpload")
 	public String getNewProduct(@ModelAttribute("Product") Product product) {
@@ -45,13 +46,12 @@ public class MarketController {
 		productDAO.setNewProduct(product); // ProductRepositoryImpl에 있는 메서드 호출
 		return "Market_Main";
 	}
+	
 	//마켓메인에서 게시글 모두 나오게 뿌리기
 	@GetMapping("/MarketMain") 
 	public String MarketProduct(Model model) {
 		List<Product> listOfProduct = productDAO.getAllProductList();
 		model.addAttribute("ProductList",listOfProduct);
-		System.out.println(listOfProduct);
-		System.out.println(model);
 		return "Market_Main";
 	}
 	@GetMapping("/Market_Product/{number}") //상세보기 기능 a태그에서 el로 보낸 값이 여기로 들어옴

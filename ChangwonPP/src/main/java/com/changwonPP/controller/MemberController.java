@@ -23,7 +23,7 @@ public class MemberController {
 
 	@PostMapping("/AddMemberSubmit") // 회원가입 처리 기능
 	public String AddNewMemberMethod(@ModelAttribute("NewMember") Member member) {
-		memberDAO.addNewMember(member); // DAO 객체인 memberDAO 안의 AddNewMember 메서드 실행
+		memberDAO.addNewMember(member); 
 		return "redirect:/";
 	}
 
@@ -34,13 +34,13 @@ public class MemberController {
 
 	@PostMapping("/LoginSubmit") // 로그인 기능
 	public String LoginMethod(@ModelAttribute("Login") Member member, HttpServletRequest req) {
-		memberDAO.Login(member, req); // DAO 객체인 memberDAO 안의 ChkLogin 메서드 실행
+		memberDAO.Login(member, req); 
 		return "redirect:/";
 	}
 	
 	@GetMapping("/Logout") // 로그아웃 기능
 	public String LogoutMethod(HttpServletRequest req) {
-		memberDAO.Logout(req); // DAO 객체인 memberDAO 안의 ChkLogin 메서드 실행
+		memberDAO.Logout(req); 
 		return "redirect:/";
 	}
 	

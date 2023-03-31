@@ -13,55 +13,38 @@
 </head>
 
 <body>
-	<jsp:include page="Main_Nav.jsp" />
+   <jsp:include page="Main_Nav.jsp" />
     <div class="container">
         <section>
             <div class="alarm">
-            	<img src="<c:url value="/resources/images/Event/alarm.PNG"/>"/>
+               <img src="<c:url value="/resources/images/Event/alarm.PNG"/>"/>
                 <div>
                     <p class="alarm_title">D-15</p>
                     <p class="alarm_content">진해 군항제 2월 15일 ~ 27일</p>
                     <p class="alarm_content">장소 : 진해 로타리</p>
-                    
                 </div>
             </div>
             <br>
             <div class="topbtn">
-	            <h2><a href="#">최근 행사</a></h2>
-	            <c:if test="${m_id != null && m_type == 2 }">
-	            	<a href="Event_Upload" class="upload">업로드</a>
-	            </c:if>
+            <h2>최근 행사</h2>
+            <c:if test="${m_id != null && m_type == 2 }">
+            	<a href="Event_Upload" class="upload">업로드</a>
+            </c:if>
             </div>
-			<ul class="event">
-				<li class="event1">
-					<a href="EventInfo" class="link"> 
-					<img src="<c:url value="/resources/images/Event/event1.jpg"/>"/>
-						<p class="p_title">진해 군항제</p>
-						<p class="p_date">군항 도시에서 함께 즐기는 세계 최대 벚꽃 축제</p>
-					</a>
-				</li>
-				<li class="event1">
-					<a href="EventInfo" class="link"> 
-					<img src="<c:url value="/resources/images/Event/event2.jpg"/>" />
-						<p class="p_title">군악 의장 페스티벌</p>
-						<p class="p_date">대한민국 해군의 모항 진해에서 울리는 미래의 선율!</p>
-					</a>
-				</li>
-				<li class="event1">
-					<a href="EventInfo" class="link"> 
-					<img src="<c:url value="/resources/images/Event/event3.jpg"/>" />
-						<p class="p_title">마산 국화축제</p>
-						<p class="p_date">국화 한 줄기에 천 오백여송이 꽃을 피운 천향여심</p>
-					</a>
-				</li>
-			</ul>
+         <ul class="event">
+         <c:forEach var="event" items="${EventList}">
+            <li class="event1">
+               <a href="EventInfo/${event.e_number }" class="link"> 
+               <img src="<c:url value="/resources/saveevent/${event.e_number}_${0}.png"/>"/>
+                  <p class="p_title">${event.e_name}</p>
+                  <p class="p_date">${event.e_title }</p>
+               </a>
+            </li>
+            </c:forEach>
+         </ul>
         </section>
     </div>
     <jsp:include page="Main_Footer.jsp" />
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 
 </html>

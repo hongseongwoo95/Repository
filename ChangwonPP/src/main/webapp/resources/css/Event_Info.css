@@ -103,8 +103,8 @@
 }
 
 .slider-wrapper img {
-    width: calc(100% / 5);
-    height: auto;
+    width: 1300px;
+    height: 570px;
 }
 
 .slider-controls {

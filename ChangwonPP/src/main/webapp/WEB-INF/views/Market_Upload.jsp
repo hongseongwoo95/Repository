@@ -26,9 +26,8 @@
                 </div>
       </article>
       <br> <br> <br> <br> <br> <br>
-         <h1>플리:마켓 상품등록</h1>
-         <br> <br>
          <form:form action="MarketUpload" modelAttribute="Product" enctype="multipart/form-data" class="middle" method="post">
+         	<h1>플리:마켓 상품등록</h1><br>
             <div>
                 <img id="preview" /> <br><br>
                     <form:input type="file" path="imgfile" id="imgfile" onchange="readURL(this);"/> 
@@ -68,7 +67,7 @@
             <form:textarea path="p_content" id="details" placeholder="내용을 입력해주세요" ></form:textarea>
             <br> <br>
             <div class="last">
-               <input type="submit" value="등록" class="lastbutton"> 
+               <input type="submit" value="등록" class="lastbutton">&nbsp; 
                <input type="reset" value="취소" class="lastbutton">
             </div>
          </form:form>

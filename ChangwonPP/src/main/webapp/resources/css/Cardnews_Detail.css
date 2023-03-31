@@ -1,0 +1,64 @@
+/* 전체 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
+/* 컨테이너 */
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* 바디 설정 */
+.news_body {
+    width: 60%;
+    margin: 0 auto;
+    height: 650px;
+}
+
+.news_title {
+    margin-bottom: 10px;
+}
+
+.news_title p {
+    font-size: 25px;
+}
+
+.news_info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.news_button {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+.news_button li {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.news_button li {
+    border: 1px solid #d9ded9;
+    background: #f2f5f9;
+    display: inline-block;
+}
+
+.news_img{
+    border:1px solid black;
+    height: 400px;
+    margin-bottom: 10px;
+}
+
+.news_text {
+    border: 1px solid black;
+    height: 500px;
+    padding: 10px;
+}

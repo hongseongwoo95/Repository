@@ -23,9 +23,9 @@
                 <h3>작성자</h3>&nbsp;
                 <p>${board.b_writer }</p>&nbsp;<span>|</span>&nbsp;
                 <h3>작성일</h3>&nbsp;
-                <p>${board.b_date }</p>&nbsp;<span>|</span>&nbsp;
-                <h3>조회수</h3>&nbsp;
-                <p>${board.b_views }</p>
+                <p>${board.b_date }</p><!-- &nbsp;<span>|</span>&nbsp; -->
+                <%-- <h3>조회수</h3>&nbsp;
+                <p>${board.b_views }</p> --%>
 
             </div>
             <hr>

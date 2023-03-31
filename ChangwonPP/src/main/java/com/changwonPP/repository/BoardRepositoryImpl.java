@@ -89,15 +89,7 @@ public class BoardRepositoryImpl implements BoardRepository {
 			} 
 			else if (board.getB_num() < numInt || board.getB_num() > numInt) {
 				getAllPageList(num, model);
-				BoardList = (List<Board>) model.getAttribute("boardlist");
-				
-				for (Board boardelse : BoardList) {
-					if (boardelse.getB_num() == numInt) {
-						boardInfo = boardelse;
-						increaseViews(num);
-						break;
-					}
-				}
+				BoardList = (List<Board>) model.getAttribute("boardlist");	
 			}
 		}
 
