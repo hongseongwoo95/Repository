@@ -114,7 +114,7 @@
                <c:forEach var="clickpd" items="${ProductList}">
                <div class="event1">
                   <a href="Market_Product/${clickpd.p_number}" class="link"> 
-                  <img src="./resources/savelmg/${clickpd.p_img}">
+                  <img src="./resources/savemarket/${clickpd.p_img}">
                      <p class="p_title">${clickpd.p_name}</p>
                      <p class="p_date">${clickpd.p_price}</p>
                   </a>

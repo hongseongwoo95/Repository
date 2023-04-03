@@ -34,7 +34,7 @@
       </div>
       <div class="event_info">
          <ul>
-            <li><i class="far fa-star"></i>명칭 : ${event.e_title}</li>
+            <li><i class="far fa-star"></i>명칭 : ${event.e_name}</li>
             <li><i class="far fa-clock"></i>축제기간 : ${event.e_date1} ~ ${event.e_date2}</li>
             <li><i class="fas fa-map-marker-alt"></i>주소 : ${event.e_addr}</li>
          </ul>
@@ -42,8 +42,7 @@
             <li><i class="fas fa-cog"></i>담당기관 : ${event.e_agency}</li>
             <li><i class="fas fa-phone-alt"></i>전화번호 :${event.e_telephone}</li>
             <li><i class="fas fa-won-sign"></i>이용료 : ${event.e_money}</li>
-            <div class="mapX">${event.mapX }</div> <!-- 맵 좌표 관련해서 나중에 수정할 예정 -->
-            <div class="mapY">${event.mapY }</div> <!-- 맵 좌표 관련해서 나중에 수정할 예정 -->
+            
          </ul>
       </div>
 
@@ -58,23 +57,21 @@
       // 이미지 지도에 표시할 마커를 아래와 같이 배열로 넣어주면 여러개의 마커를 표시할 수 있습니다 
       var markers = [ {
 
-         position : new kakao.maps.LatLng(35.15905950440791,
-               128.6866172173842),
-         text : '경화역 벚꽃길' // text 옵션을 설정하면 마커 위에 텍스트를 함께 표시할 수 있습니다     
+         position : new kakao.maps.LatLng(${event.e_mapY},
+        		 ${event.e_mapX}),
+         text : '${event.e_addr}' // text 옵션을 설정하면 마커 위에 텍스트를 함께 표시할 수 있습니다     
       } ];
 
-      var staticMapContainer = document.getElementById('staticMap'), // 이미지 지도를 표시할 div  
+       var staticMapContainer = document.getElementById('staticMap'), // 이미지 지도를 표시할 div  
+      
       staticMapOption = {
-         center : new kakao.maps.LatLng(35.15905950440791, 128.6866172173842), // 이미지 지도의 중심좌표
+         center : new kakao.maps.LatLng(${event.e_mapY}, ${event.e_mapX}), // 이미지 지도의 중심좌표
          level : 3, // 이미지 지도의 확대 레벨
-         marker : markers
-      // 이미지 지도에 표시할 마커 
-      };
+         marker : markers // 이미지 지도에 표시할 마커 
+      };  
 
       // 이미지 지도를 생성합니다
-      var staticMap = new kakao.maps.StaticMap(staticMapContainer,
-            staticMapOption);
+      var staticMap = new kakao.maps.StaticMap(staticMapContainer,staticMapOption);
    </script>
 </body>
-
 </html>

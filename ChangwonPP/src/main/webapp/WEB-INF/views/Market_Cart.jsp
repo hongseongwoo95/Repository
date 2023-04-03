@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="./resources/css/Market_Cart.css" />
+<link rel="stylesheet" href="<c:url value="/resources/css/Market_Cart.css"/>" />
 <script src="https://kit.fontawesome.com/380c1469b3.js" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">

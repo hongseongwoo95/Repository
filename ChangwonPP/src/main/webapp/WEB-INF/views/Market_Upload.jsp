@@ -41,7 +41,8 @@
             <br> <br>
             <div class="price">
                <h2>상품가격</h2>
-               <form:input type="text" path="p_price" placeholder="상품가격을 입력해주세요" class="priceinput" />
+               <form:input type="text" path="p_price" placeholder="상품가격을 입력해주세요" class="priceinput" 
+               oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
             </div>
             <br> <br>
             <div>

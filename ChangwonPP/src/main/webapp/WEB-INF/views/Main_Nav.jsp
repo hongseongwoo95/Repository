@@ -33,8 +33,8 @@
 				<c:when test="${m_id != null }">
 					<div class="memberinfo">
 						<p>${m_name }님 반갑습니다.
-						<a href="UpdateMember">내 정보</a>
-						<a href="Logout" onclick="alert('로그아웃되었습니다.')">로그아웃</a>
+						<a href="<c:url value="/UpdateMember"/>">내 정보</a>
+						<a href="<c:url value="/Logout"/>" onclick="alert('로그아웃되었습니다.')">로그아웃</a>
 					</div>
 				</c:when>
            		<c:otherwise>

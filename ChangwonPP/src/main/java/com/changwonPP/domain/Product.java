@@ -29,13 +29,13 @@ public class Product {
          this.imgfile = imgfile;
       }
       public int getP_number() {
-  		return p_number;
-  	 }
+        return p_number;
+      }
 
 
-  	 public void setP_number(int p_number) {
-  		this.p_number = p_number;
-  	 }
+      public void setP_number(int p_number) {
+        this.p_number = p_number;
+      }
 
 
       public String getP_img() {
@@ -97,7 +97,6 @@ public class Product {
          this.p_brand = p_brand;
       }
 
-
       public String getP_content() {
          return p_content;
       }
@@ -106,6 +105,7 @@ public class Product {
       public void setP_content(String p_content) {
          this.p_content = p_content;
       }
+
 
       
  

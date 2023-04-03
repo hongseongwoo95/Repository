@@ -40,9 +40,9 @@
    font-size: .9em;
 }
 
-p {
+.p_input {
    font-size: x-large;
-   margin-bottom: 3%;
+   margin-bottom: 10px;
 }
 
 .inputbox {
@@ -61,8 +61,7 @@ p {
    border: 1px soild red;
 }
 </style>
-   <script type="text/javascript"
-        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=10ae40fd28ac17676cbbeffd8634a635&libraries=services"></script>
+   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=10ae40fd28ac17676cbbeffd8634a635&libraries=services"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <body>
 <jsp:include page="Main_Nav.jsp" />
@@ -70,7 +69,7 @@ p {
         <h2>행사등록</h2><hr><br><br>
         <form:form action="Event_Upload" method="post" modelAttribute="Event" enctype="multipart/form-data" >
             <h3>행사제목</h3> 
-            <p><form:input type="text" path="e_name" placeholder="제목을 입력해주세요" class="inputbox"/></p>
+            <p class="p_input"><form:input type="text" path="e_name" placeholder="제목을 입력해주세요" class="inputbox"/></p>
             <h3>파일선택</h3>
          <div id='image_preview'>
             <h3>이미지 미리보기</h3>
@@ -79,23 +78,23 @@ p {
                data-placeholder='파일을 첨부 하려면 파일 선택 버튼을 클릭하거나 파일을 드래그앤드롭 하세요'></div>
          </div> <br>
             <h3>행사 타이틀</h3>
-            <p><form:input type="text" path="e_title" placeholder="타이틀을 입력해주세요" class="inputbox" /></p>
+            <p class="p_input"><form:input type="text" path="e_title" placeholder="타이틀을 입력해주세요" class="inputbox" /></p>
             <h3>축제기간</h3>
-            <p><form:input type="date" path="e_date1" min="2023-01-01" max="2025-01-01" class="inputdate"/>
+            <p class="p_input"><form:input type="date" path="e_date1" min="2023-01-01" max="2025-01-01" class="inputdate"/>
                 ~ <form:input type="date" path="e_date2" min="2023-01-01" max="2025-01-01" class="inputdate"/></p>
-            <h3>주소</h3>
-            <p><form:input type="text" path="e_addr" placeholder="제목을 입력해주세요" class="inputbox"/></p>
             <h3>담당기관</h3>
-            <p><form:input type="text" path="e_agency" placeholder="담당기관 명을 입력해주세요" class="inputbox"/></p>
+            <p class="p_input"><form:input type="text" path="e_agency" placeholder="담당기관 명을 입력해주세요" class="inputbox"/></p>
             <h3>전화번호</h3>
-            <p><form:input type="text" path="e_telephone" placeholder="-제외하고 숫자만 입력해주세요" class="inputbox"/></p>
+            <p class="p_input"><form:input type="text" path="e_telephone" placeholder="-제외하고 숫자만 입력해주세요" class="inputbox"
+            	oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="11"/></p>
             <h3>이용요금</h3>
-            <p><form:input type="text" path="e_money" placeholder="이용료를 입력해주세요" class="inputbox"/></p>
+            <p class="p_input"><form:input type="text" path="e_money" placeholder="이용료를 입력해주세요" class="inputbox" maxlength="15"
+           		 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" /></p>
             <h3>지도</h3>
-                <p><input type="text" id="sample5_address" placeholder="주소" class="inputbox"/></p>
-                <input type="button" onclick="sample5_execDaumPostcode()" value="주소 검색"><br>
+            <p class="p_input"><form:input type="text" path="e_addr" id="sample5_address" placeholder="주소" class="inputbox" readonly="true"/></p>
+            <input type="button" onclick="sample5_execDaumPostcode()" value="주소 검색"><br>
             <div id="map" style="width:300px;height:300px;margin-top:10px;display:none"></div>
-            <p> <input type="submit" value="등록" class="submitbutton"></p>
+            <p class="p_input"> <input type="submit" value="등록" class="submitbutton"></p>
              <!-- 주소 API로 입력되는 이름과 좌표값을 database에 저장하기 위해서 아래 input 3개를 만들고 display:none할 예정 -->
            <form:input type="text" path="e_mapX" name="e_mapX" class="cdX"></form:input>
             <form:input type="text" path="e_mapY" name="e_mapY" class="cdY"></form:input>

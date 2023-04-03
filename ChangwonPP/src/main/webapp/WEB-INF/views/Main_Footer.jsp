@@ -12,9 +12,9 @@
 </head>
 
 <body>
-    <hr>
+   <br><br><br><hr><br><br>
    <footer>
-      <div class="container">
+      <div class="footer_container">
          <div class="footer_box">
             <div class="logo_box">
                <a href="https://www.youtube.com/@TheChangwonCity/featured" target="_blank">

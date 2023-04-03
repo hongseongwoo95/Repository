@@ -2,11 +2,15 @@ package com.changwonPP.repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
 import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
+
 import com.changwonPP.domain.Product;
 
 @Repository
@@ -42,10 +46,21 @@ public class ProductRepositoryImpl implements ProductRepository{
 
    @Override // DB에 데이터를 삽입할 때 씀
    public void setNewProduct(Product product) {
-      String SQL =  "Insert INTO product(p_number,p_img, p_name, p_price, p_condition, p_notice, p_brand, p_content)"+
+      String SQL =  "Insert INTO product(p_number,p_img, p_name, p_price, p_condition, p_notice, p_brand,p_content)"+
               " VALUES (?,?,?,?,?,?,?,?)";
-      template.update(SQL,product.getP_number(), product.getP_img(), product.getP_name(),product.getP_price(),product.getP_condition(),product.getP_notice(),product.getP_brand(),product.getP_content());
-      
+      template.update(SQL,product.getP_number(), product.getP_img(), product.getP_name(),product.getP_price(),product.getP_condition(),
+    		  product.getP_notice(),product.getP_brand(),product.getP_content());   
    }
 
+
+	@Override
+	public Map<String, Object> getMemberInfo(String memberId) {
+		String sql = "SELECT m_name, m_phone FROM member WHERE m_id=?";
+        
+        return template.queryForMap(sql, memberId);
+		
+	}
+   
+   
+   
 }

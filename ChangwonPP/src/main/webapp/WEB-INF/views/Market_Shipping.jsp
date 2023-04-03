@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <head>
-<link rel="stylesheet" href="./resources/css/Market_Shipping.css" />
+<link rel="stylesheet" href="<c:url value="/resources/css/Market_Shipping.css"/>" />
 <script src="https://kit.fontawesome.com/380c1469b3.js"
 	crossorigin="anonymous"></script>
 <script
@@ -31,9 +31,9 @@
 									class="tab_item" for="programming">직접입력</label>
 								<div class="tab_content" id="all_content">
 									<form>
-										<div>이름</div>
-										<div>주소</div>
-										<div>연락처</div>
+										<div>이름 :${memberName }</div>
+										<div>주소 :</div>
+										<div>연락처 :${memberPhone }</div>
 										<select name="" id="">
 											<option value="">배송시 요청사항 선택하기</option>
 											<option value="">직접 수령하겠습니다</option>
@@ -138,22 +138,19 @@
 						<ul>
 							<li class="product_list">
 								<div class="product_list1">
-									<label for="product" id="product_check"> <input
-										type="checkbox" name="product">
-									</label>
+									<label for="product" id="product_check"> <input type="checkbox" name="product"> </label>&nbsp;&nbsp;
 									<div class="list1">
-										<img src="./img/shopping&Shipping/kimchi.PNG" id="ship_img">
+										<img src="<c:url value="/resources/savemarket/${product.p_img}"/>" id="ship_img">
 									</div>
 									<div class="list2">
 										<div class="list3">
-											<a href="#" class="mo">다경농원 단감김치5kg</a> <input type="number"
-												min="1" class="mo" id="mo_input">
+											<a href="#" class="mo">${product.p_name}</a>
 										</div>
 									</div>
 								</div>
 
 								<div class="product_price">
-									<h3>가격 25,000원</h3>
+									<h3>가격 ${product.p_price}원</h3>
 								</div>
 								<div class="free_shipping">
 									<h3>무료배송</h3>

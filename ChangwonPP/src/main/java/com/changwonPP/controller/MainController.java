@@ -6,11 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 	
-	@GetMapping("/Cardnews")
-	public String CardnewsMethod() {
-		return "Cardnews";
-	}
-	
 	@GetMapping("/Bus")
 	public String BusMethod() {
 		return "Bus";

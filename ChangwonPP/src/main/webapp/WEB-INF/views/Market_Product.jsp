@@ -39,8 +39,8 @@
 		<br> <br>
 		<section class="salemiddle">
 			<div class="product">
-				<div class="slider">
-					<img src="./resources/savelmg/${product.p_img}" class="imgs">
+				<div class="product_img">
+					<img src="<c:url value="/resources/savemarket/${product.p_img}"/>" class="imgs">
 				</div>
 			</div>
 			<div class="imformation">
@@ -58,12 +58,7 @@
 					<p class="info_f"> ${product.p_brand} <br> <br>
 					<div class="wrap">
 						<div>
-							<button class="middlebutton">장바구니</button>
-							<a href="Market_Cart">장바구니</a>
-						</div>
-						<div>
-							<button class="middlebutton">바로구매</button>
-							<a href="Market_Shipping">바로구매</a>
+							<a href="MarketShipping/${number}">바로구매</a>
 						</div>
 					</div>
 			</div>
