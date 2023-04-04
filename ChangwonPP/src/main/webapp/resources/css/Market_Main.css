@@ -86,7 +86,7 @@
 
 .map1, .map2 {
    height: 50%;
-   font-size: x-large;
+   font-size: 21px;
    background-color: whitesmoke;
    display: flex;
    align-items: center;
@@ -95,6 +95,10 @@
 .map .map1 img {
    width: 100%;
    height: 100%;
+}
+
+.item_top a{
+	height: 100%;
 }
 .recent{
    width: 100%;
@@ -144,10 +148,11 @@
 .slide_item {
     display: flex;
     justify-content: center;
-    height: 600px;
+    height: 100%;
 }
 .slide_wrap{
     position: relative;
+    height: 600px;
 }
 
 /* 슬라이드에서 왼쪽 이미지*/
@@ -181,6 +186,7 @@
 .item_bot {
     height: 50%;
     padding: 5px;
+    box-sizing: border-box;
 }
 
 .button_wrap {
@@ -201,6 +207,6 @@
     background: none;
     font-size: 2rem;
     cursor: pointer;
-    background-color: #cccc;
-    border-radius: 50%;
+    padding: 0 10px;
+    background-color:darkgray;
 }

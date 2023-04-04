@@ -6,6 +6,8 @@
 <html>
 <head>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="<c:url value="/resources/js/Add_Member.js"/>"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <link rel="stylesheet" href="./resources/css/Add_Member.css">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,17 +54,18 @@
             - <form:input type="text" size="10" path="m_phone2" maxlength="4" class="input3"
                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required="required"/>
             - <form:input type="text" size="10" path="m_phone3" maxlength="4" class="input3"
-                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required="required"/>
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required="required"/>   
+            <input type="button" onclick="sample6_execDaumPostcode()" value="주소검색" class="serchaddr"/>
+            <form:input type="text" id="sample6_postcode" placeholder="우편번호" class="postnum input2" path="m_postnum" readonly="true"/> 
+			<form:input type="text" id="sample6_extraAddress" placeholder="참고항목" class="exad input2" path="m_exad" readonly="true"/>
+			<form:input type="text" id="sample6_address" placeholder="주소" class="addr input" path="m_addr1" readonly="true"/><br> 
+			<form:input type="text" id="sample6_detailAddress" placeholder="상세주소" class="addr input" path="m_addr2" />
             <h4>성별</h4>
             <form:radiobutton path="m_sex" class="radio" value="male" required="required"/>남성
 			<form:radiobutton path="m_sex" class="radio" value="female" required="required"/>여성
             <input type="submit" value="회원가입" class="submit"/>
         </form:form>
     </div>
-    <script>
-    
-    
-</script>
 </body>
 
 </html>

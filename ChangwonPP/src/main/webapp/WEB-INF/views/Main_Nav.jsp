@@ -58,7 +58,7 @@
                     <a href="<c:url value="/EventPage"/>">행사</a>
                 </li>
                 <li class="menu1">
-                    <a href="<c:url value="/Bus"/>">버스정보</a>
+                    <a href="<c:url value="/AboutCompany"/>">회사소개</a>
                 </li>
                 <li class="menu1">
                     <a href="<c:url value="/MarketMain"/>">플리:마켓</a>

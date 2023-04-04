@@ -20,8 +20,9 @@
 }
 
 .event_info {
-    margin-left: 25%;
+    margin-left: 19%;
     display: flex;
+    justify-content: center;
 }
 .event_info ul{
     width: 100%;
@@ -47,7 +48,6 @@
 }
 
 .event_map {
-    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,4 +144,9 @@
     .slider-button:before {
         font-size: 20px;
     }
+}
+
+.staticMap{
+	display:flex;
+	justify-content: center;
 }

@@ -80,7 +80,8 @@
     right: 10px;
     top: 20px;
     border: 1px solid #d9ded9;
-    background: #f2f5f9;
+         background-color: rgb(255, 255, 255);
+    border-color: rgb(204, 204, 204);
     padding: 5px;
 }
 

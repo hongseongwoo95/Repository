@@ -21,7 +21,7 @@
                     <li><a href="/ChangwonPP/Cardnews">글목록</a></li>
                 </ul>
             </div>
-            <div class="news_img">${news.news_img}</div>
+            <div class="news_img"><img src="<c:url value="/resources/savecardnews/${news.news_img}"/>"></div>
             <div class="news_text">${news.news_content}</div>
         </article>
     </div>

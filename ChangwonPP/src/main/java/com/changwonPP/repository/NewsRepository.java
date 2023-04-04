@@ -10,4 +10,5 @@ public interface NewsRepository {
    List<News> getAllNews();
    void setNews(News news);
    void getdetailNews(String number, Model model);
+   List<News> getLimitNews();
 }

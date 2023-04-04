@@ -60,6 +60,9 @@
    height: 30px;
    border: 1px soild red;
 }
+.cdX, .cdY{
+ display:none;
+}
 </style>
    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=10ae40fd28ac17676cbbeffd8634a635&libraries=services"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -86,14 +89,14 @@
             <p class="p_input"><form:input type="text" path="e_agency" placeholder="담당기관 명을 입력해주세요" class="inputbox"/></p>
             <h3>전화번호</h3>
             <p class="p_input"><form:input type="text" path="e_telephone" placeholder="-제외하고 숫자만 입력해주세요" class="inputbox"
-            	oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="11"/></p>
+            	oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="15"/></p>
             <h3>이용요금</h3>
             <p class="p_input"><form:input type="text" path="e_money" placeholder="이용료를 입력해주세요" class="inputbox" maxlength="15"
            		 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" /></p>
             <h3>지도</h3>
             <p class="p_input"><form:input type="text" path="e_addr" id="sample5_address" placeholder="주소" class="inputbox" readonly="true"/></p>
             <input type="button" onclick="sample5_execDaumPostcode()" value="주소 검색"><br>
-            <div id="map" style="width:300px;height:300px;margin-top:10px;display:none"></div>
+            <div id="map" style="width:400px; height:300px; margin-top:10px;display:none"></div>
             <p class="p_input"> <input type="submit" value="등록" class="submitbutton"></p>
              <!-- 주소 API로 입력되는 이름과 좌표값을 database에 저장하기 위해서 아래 input 3개를 만들고 display:none할 예정 -->
            <form:input type="text" path="e_mapX" name="e_mapX" class="cdX"></form:input>

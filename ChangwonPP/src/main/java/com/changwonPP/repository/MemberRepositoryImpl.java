@@ -23,8 +23,6 @@ public class MemberRepositoryImpl implements MemberRepository {
 		this.template = new JdbcTemplate(dataSource);
 	}
 
-	private List<Member> listOfMembers = new ArrayList<Member>(); // 모든 회원정보를 담을 수 있는 DAO를 ArrayList 형식으로 객체 생성
-
 	@Override // 모든 회원 정보를 가져오는 기능(나중에 관리자가 회원관리할 때 사용할 예정)
 	public List<Member> getAllMemberList() { // DB의 member 테이블에 등록된 모든 회원 목록을 조회하여 회원 목록을 리턴하는 메서드
 		String SQL = "select * from member";
@@ -37,12 +35,13 @@ public class MemberRepositoryImpl implements MemberRepository {
 		// DB에 데이터를 삽입할 때 들어가는 데이터 3개 사이에 "-"를 넣고 변수로 처리해서 아래에서 넣을 수 있게 함
 		String m_birthday = member.getM_birthday1() + "-" + member.getM_birthday2() + "-" + member.getM_birthday3();
 		String m_phone = member.getM_phone1() + "-" + member.getM_phone2() + "-" + member.getM_phone3();
+		String m_addr = member.getM_addr1() + " " + member.getM_addr2();
 
-		String SQL = "Insert INTO member(m_id, m_pw, m_name, m_birthday, m_mail, m_phone, m_sex, m_type)"
-				+ " VALUES (?,?,?,?,?,?,?,?)";
+		String SQL = "Insert INTO member(m_id, m_pw, m_name, m_birthday, m_mail, m_phone, m_postnum, m_addr, m_exad, m_sex, m_type)"
+				+ " VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
 		template.update(SQL, member.getM_id(), member.getM_pw(), member.getM_name(), m_birthday, member.getM_mail(),
-				m_phone, member.getM_sex(), 1);
+				m_phone, member.getM_postnum(), m_addr, member.getM_exad(), member.getM_sex(), 1);
 	}
 
 	@Override // 로그인 처리 기능 구현

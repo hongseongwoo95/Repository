@@ -127,3 +127,9 @@ ul li img {
 .info_f {
 	font-size: larger;
 }
+
+.buy{
+     border: 1px solid black;
+     padding: 5px 10px;
+     background-color: whitesmoke;
+        }

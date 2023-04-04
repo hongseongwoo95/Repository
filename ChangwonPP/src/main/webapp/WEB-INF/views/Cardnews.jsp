@@ -16,8 +16,12 @@
    <jsp:include page="Main_Nav.jsp" />
     <div class="container">
         <section>
-           <a href="CardnewsUpload">뉴스등록하기</a>
-            <h2>카드뉴스</h2> <br><br>
+        	<div class="topbtn">
+	            <h2>카드뉴스</h2> <br>
+	            <c:if test="${m_id != null && m_type == 2 }">
+	           	<a href="CardnewsUpload" class="upload">뉴스등록</a>
+	            </c:if>
+            </div>
             <div class="event">
             <c:forEach var="click" items="${NewsList}">
                 <div class="event1">

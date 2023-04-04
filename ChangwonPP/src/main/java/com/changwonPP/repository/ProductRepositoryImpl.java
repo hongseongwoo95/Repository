@@ -55,7 +55,7 @@ public class ProductRepositoryImpl implements ProductRepository{
 
 	@Override
 	public Map<String, Object> getMemberInfo(String memberId) {
-		String sql = "SELECT m_name, m_phone FROM member WHERE m_id=?";
+		String sql = "SELECT m_name, m_phone, m_addr FROM member WHERE m_id=?";
         
         return template.queryForMap(sql, memberId);
 		

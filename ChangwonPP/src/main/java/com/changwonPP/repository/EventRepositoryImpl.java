@@ -85,7 +85,7 @@ public class EventRepositoryImpl implements EventRepository {
        
    }
    
-   @Override
+   @Override // 이벤트 상세 페이지
    public void clickEvent(String number, Model model) {
       Event eventInfo = null;
       int numpk = Integer.parseInt(number);
@@ -95,6 +95,21 @@ public class EventRepositoryImpl implements EventRepository {
             model.addAttribute("event",eventInfo);
          }
       }
+   }
+   
+   @Override // 메인 페이지에 이벤트 갯수 6개만 출력
+   public List<Event> getLimitEvent() {
+      String SQL = " SELECT event.*, Event_Multiple.file_name FROM event \r\n"
+            + " JOIN (\r\n"
+            + "    SELECT e_number, MAX(file_name) AS file_name\r\n"
+            + "    FROM event_Multiple\r\n"
+            + "    GROUP BY e_number\r\n"
+            + ") Event_Multiple\r\n"
+            + "ON event.e_number = event_Multiple.e_number\r\n"
+            + "ORDER BY event.e_number DESC limit 6;";
+      List<Event> listOfEvent = template.query(SQL,new EventRowMapper());
+    this.EventList = listOfEvent;
+      return listOfEvent;
    }
 
 

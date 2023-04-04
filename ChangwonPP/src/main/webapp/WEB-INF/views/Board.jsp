@@ -62,16 +62,15 @@
 					        <li><a href='<c:url value="/Board/${paging.endPage + 1}"/>'>&gt;</a></li>
 					    </c:if>
 					</ul>
-				</div>
+				</div><br>
 				<c:if test="${m_id != null && m_type == 2 }">
 					<div class="post">
-						<a href="<c:url value="/Post"/>" class="btn_write">글쓰기</a>
+						<a href="<c:url value="/Post"/>">글쓰기</a>
 					</div>
 				</c:if>
 			</div>
 		</div>
 	</section>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<jsp:include page="Main_Footer.jsp" />
 </body>
 

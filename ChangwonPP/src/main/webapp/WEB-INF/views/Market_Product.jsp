@@ -49,7 +49,7 @@
 					${product.p_name} <br>
 				<h1>소비자가격</h1>
 				<p class="info_f">
-					${product.p_price} <br>
+					${product.p_price}원 <br>
 				<h3>상품상태</h3>
 					<p class="info_f"> ${product.p_condition} <br>
 					<h3>참고사항</h3>
@@ -58,7 +58,7 @@
 					<p class="info_f"> ${product.p_brand} <br> <br>
 					<div class="wrap">
 						<div>
-							<a href="MarketShipping/${number}">바로구매</a>
+							<a href="MarketShipping/${number}" class="buy">바로구매</a>
 						</div>
 					</div>
 			</div>

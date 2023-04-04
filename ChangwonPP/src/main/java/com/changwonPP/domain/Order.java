@@ -8,6 +8,7 @@ public class Order {
 	private int p_price;
 	private String m_name;
 	private String m_phone;
+	private String m_addr;
 	
 	public int getO_number() {
 		return o_number;
@@ -50,6 +51,12 @@ public class Order {
 	}
 	public void setM_phone(String m_phone) {
 		this.m_phone = m_phone;
+	}
+	public String getM_addr() {
+		return m_addr;
+	}
+	public void setM_addr(String m_addr) {
+		this.m_addr = m_addr;
 	}
 
 }

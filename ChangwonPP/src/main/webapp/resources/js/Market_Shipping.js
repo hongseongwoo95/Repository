@@ -1,21 +1,11 @@
-$(document).ready(function() {
-    $('form').on('submit', function(event) {
-        event.preventDefault();
-        var id = $('input[name="m_id"]').val();
-        var regex = /^[a-zA-Z0-9]*$/;
-        var errorContainer = $('.error-message');
-        
-        if (!regex.test(id)) {
-            errorContainer.html("아이디는 영문자와 숫자만 입력 가능합니다.").fadeIn(500);
-        } else {
-            $('form').unbind('submit').submit();
+function selectAll(selectAll)  {
+             const checkboxes  = document.getElementsByName('product');
+  
+         checkboxes.forEach((checkbox) => {
+           checkbox.checked = selectAll.checked;
+            })
         }
-    });
-});
-
-
-
-function sample6_execDaumPostcode() {
+        function sample6_execDaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
                 // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
@@ -62,3 +52,5 @@ function sample6_execDaumPostcode() {
             }
         }).open();
     }
+    
+    

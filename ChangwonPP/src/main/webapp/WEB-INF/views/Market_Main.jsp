@@ -5,8 +5,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="./resources/css/Market_Main.css" />
-<script src="https://kit.fontawesome.com/380c1469b3.js"
-	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/380c1469b3.js" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -100,8 +99,8 @@
 				</div>
 			</div>
             <div class="button_wrap">
-                <button class="prev_btn">◀</button>
-                <button class="next_btn">▶</button>
+                <button class="prev_btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="next_btn"><i class="fas fa-chevron-right"></i></button>
             </div>
 		</div>
 		<br> <br>
@@ -116,7 +115,7 @@
                   <a href="Market_Product/${clickpd.p_number}" class="link"> 
                   <img src="./resources/savemarket/${clickpd.p_img}">
                      <p class="p_title">${clickpd.p_name}</p>
-                     <p class="p_date">${clickpd.p_price}</p>
+                     <p class="p_date">${clickpd.p_price}원</p>
                   </a>
                </div>
             </c:forEach>
@@ -125,44 +124,6 @@
 		<br>
 	</div>
 	<jsp:include page="Main_Footer.jsp" />
-	<script>
-	   const slideWrap = document.querySelector('.slide_wrap');
-	   const prevBtn = document.querySelector('.prev_btn');
-	   const nextBtn = document.querySelector('.next_btn');
-	   const slideItems = document.querySelectorAll('.slide_item');
-	   let slideIndex = 1;
-	
-	   function showSlide(n) {
-	       // 모든 슬라이드 아이템 숨기기
-	       for (let i = 0; i < slideItems.length; i++) {
-	           slideItems[i].style.display = 'none';
-	       }
-	       // 현재 보여줄 슬라이드 아이템 보이기
-	       if (n > slideItems.length) {
-	           slideIndex = 1;
-	       }
-	       if (n < 1) {
-	           slideIndex = slideItems.length;
-	       }
-	       slideItems[slideIndex - 1].style.display = 'flex';
-	   }
-	
-	   function plusSlide(n) {
-	       showSlide(slideIndex += n);
-	   }
-	
-	   // 초기 슬라이드 보이기
-	   showSlide(slideIndex);
-	
-	   // 이전 버튼 클릭 시
-	   prevBtn.addEventListener('click', function () {
-	       plusSlide(-1);
-	   });
-	
-	   // 다음 버튼 클릭 시
-	   nextBtn.addEventListener('click', function () {
-	       plusSlide(1);
-	   });
-	</script>
+	<script src="<c:url value="/resources/js/Market_Main.js"/>"></script>
 </body>
 </html>

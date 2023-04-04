@@ -26,10 +26,10 @@
             </div>
             <br>
             <div class="topbtn">
-            <h2>최근 행사</h2>
-            <c:if test="${m_id != null && m_type == 2 }">
-            	<a href="Event_Upload" class="upload">업로드</a>
-            </c:if>
+	            <h2>최근 행사</h2>
+	            <c:if test="${m_id != null && m_type == 2 }">
+	            	<a href="Event_Upload" class="upload">업로드</a>
+	            </c:if>
             </div>
          <ul class="event">
          <c:forEach var="event" items="${EventList}">

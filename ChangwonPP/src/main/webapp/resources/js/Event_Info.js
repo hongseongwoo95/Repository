@@ -21,3 +21,5 @@ window.onload = function() {
       wrapper.style.transform = `translateX(-${imageIndex * imageWidth}px)`;
   }, 5000);
 };
+
+

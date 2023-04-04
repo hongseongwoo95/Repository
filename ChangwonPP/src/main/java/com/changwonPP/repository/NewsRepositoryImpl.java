@@ -49,4 +49,12 @@ public class NewsRepositoryImpl implements NewsRepository{
       template.update(SQL, news.getNews_num(), news.getNews_img(), news.getNews_name(), news.getNews_content());
       
    }
+   
+   @Override // 메인페이지에 뉴스 6개만 출력
+   public List<News> getLimitNews() {
+      String SQL = "select * from news order by news_num desc limit 6";
+      List<News> listOfNews = template.query(SQL, new NewsRowMapper());
+      this.NewsList = listOfNews;
+      return listOfNews;
+   }
 }

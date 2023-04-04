@@ -13,6 +13,10 @@ public class Member {
 	private String m_phone3;
 	private String m_sex;
 	private int m_type;
+	private int m_postnum;
+	private String m_addr1;
+	private String m_addr2;
+	private String m_exad;
 	
 	public Member() {
 		super();
@@ -113,5 +117,37 @@ public class Member {
 
 	public void setM_type(int m_type) {
 		this.m_type = m_type;
+	}
+
+	public String getM_addr1() {
+		return m_addr1;
+	}
+
+	public void setM_addr1(String m_addr1) {
+		this.m_addr1 = m_addr1;
+	}
+
+	public String getM_addr2() {
+		return m_addr2;
+	}
+
+	public void setM_addr2(String m_addr2) {
+		this.m_addr2 = m_addr2;
+	}
+
+	public int getM_postnum() {
+		return m_postnum;
+	}
+
+	public void setM_postnum(int m_postnum) {
+		this.m_postnum = m_postnum;
+	}
+
+	public String getM_exad() {
+		return m_exad;
+	}
+
+	public void setM_exad(String m_exad) {
+		this.m_exad = m_exad;
 	}
 }

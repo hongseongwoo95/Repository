@@ -53,7 +53,11 @@
 .news_img{
     border:1px solid black;
     height: 400px;
-    margin-bottom: 10px;
+}
+
+.news_img img{
+	height: 100%;
+	width: 100%;
 }
 
 .news_text {

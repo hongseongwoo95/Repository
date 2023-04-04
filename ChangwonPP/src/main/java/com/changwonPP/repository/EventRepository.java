@@ -12,4 +12,5 @@ public interface EventRepository {
 	List<Event> getAllEvent();
 	void setNewEvent(Event event, Event_Multiple event_files) throws IOException;
 	void clickEvent(String number, Model model);
+	List<Event> getLimitEvent();
 }

@@ -5,8 +5,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="<c:url value="/resources/css/Event_Info.css"/>" />
-<script src="https://kit.fontawesome.com/380c1469b3.js"
-   crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/380c1469b3.js" crossorigin="anonymous"></script>
 <script src="<c:url value="/resources/js/Event_Info.js"/>"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=10ae40fd28ac17676cbbeffd8634a635"></script>
 <meta charset="UTF-8">
@@ -42,12 +41,10 @@
             <li><i class="fas fa-cog"></i>담당기관 : ${event.e_agency}</li>
             <li><i class="fas fa-phone-alt"></i>전화번호 :${event.e_telephone}</li>
             <li><i class="fas fa-won-sign"></i>이용료 : ${event.e_money}</li>
-            
          </ul>
       </div>
-
       <div class="event_map">
-         <div id="staticMap" style="width: 600px; height: 350px;"></div>
+         <div id="staticMap" style="width: 700px; height: 350px;"></div>
       </div>
       <br>
 </div>

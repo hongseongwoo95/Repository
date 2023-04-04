@@ -78,6 +78,7 @@ public class MarketController {
 		Map<String, Object> memberInfo = productDAO.getMemberInfo(memberId); // 회원정보를 가져오는 메서드 호출
 		model.addAttribute("memberName", memberInfo.get("m_name"));
         model.addAttribute("memberPhone", memberInfo.get("m_phone"));
+        model.addAttribute("memberAddr", memberInfo.get("m_addr"));
         
 		productDAO.clickProduct(number, model);
 		model.addAttribute(number, model);
