@@ -17,45 +17,45 @@ public class MemberController {
 	private MemberRepository memberDAO; 
 	
 	@GetMapping("/AddMember") // 회원가입 버튼 클릭시 페이지 매핑
-	public String AddMemberMethod(@ModelAttribute("NewMember") Member member) {
+	public String addMemberMethod(@ModelAttribute("NewMember") Member member) {
 		return "Add_Member";
 	}
 
 	@PostMapping("/AddMemberSubmit") // 회원가입 처리 기능
-	public String AddNewMemberMethod(@ModelAttribute("NewMember") Member member) {
+	public String addNewMemberMethod(@ModelAttribute("NewMember") Member member) {
 		memberDAO.addNewMember(member); 
 		return "redirect:/";
 	}
 
 	@GetMapping("/Login") // 로그인 버튼 클릭시 페이지 매핑
-	public String LoginMethod(@ModelAttribute("Login") Member member) {
+	public String loginMethod(@ModelAttribute("Login") Member member) {
 		return "Login";
 	}
 
 	@PostMapping("/LoginSubmit") // 로그인 기능
-	public String LoginMethod(@ModelAttribute("Login") Member member, HttpServletRequest req) {
+	public String loginSubmitMethod(@ModelAttribute("Login") Member member, HttpServletRequest req) {
 		memberDAO.Login(member, req); 
 		return "redirect:/";
 	}
 	
 	@GetMapping("/Logout") // 로그아웃 기능
-	public String LogoutMethod(HttpServletRequest req) {
+	public String logoutMethod(HttpServletRequest req) {
 		memberDAO.Logout(req); 
 		return "redirect:/";
 	}
 	
 	@GetMapping("UpdateMember") // 회원수정 기능
-	public String UpdateMemberMethod(@ModelAttribute("Update") Member member) {
+	public String updateMemberMethod(@ModelAttribute("Update") Member member) {
 		return "Update_Member";
 	}
 
 	@GetMapping("/FindID") // 아이디찾기 기능
-	public String IDMethod() {
+	public String findiDMethod() {
 		return "Find_ID";
 	}
 
 	@GetMapping("/FindPW") // 비밀번호 찾기 기능
-	public String PWMethod() {
+	public String findpWMethod() {
 		return "Find_PW";
 	}
 }

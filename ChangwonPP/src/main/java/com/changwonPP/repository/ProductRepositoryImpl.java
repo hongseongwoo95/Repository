@@ -22,7 +22,6 @@ public class ProductRepositoryImpl implements ProductRepository{
    public void setJdbctemplate(DataSource dataSource) {
       this.template = new JdbcTemplate(dataSource);
    }
-   private List<Product> listOfProduct = new ArrayList<Product>();
    
    @Override // 모든 제품 정보를 가져오는 기능
    public List<Product> getAllProductList() {

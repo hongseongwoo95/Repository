@@ -35,7 +35,7 @@
 			</div>
 		</article>
 		<br>
-		<h2>플리:마켓</h2>
+		<h2>플리마켓</h2>
 		<br> <br>
 		<div class="slide slide_wrap">
 			<div class="slide_item item1">

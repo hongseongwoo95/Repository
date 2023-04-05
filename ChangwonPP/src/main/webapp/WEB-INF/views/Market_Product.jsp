@@ -54,7 +54,7 @@
 					<p class="info_f"> ${product.p_condition} <br>
 					<h3>참고사항</h3>
 					<p class="info_f"> ${product.p_notice} <br>
-					<h3>브랜드</h3>
+					<h3>판매처</h3>
 					<p class="info_f"> ${product.p_brand} <br> <br>
 					<div class="wrap">
 						<div>

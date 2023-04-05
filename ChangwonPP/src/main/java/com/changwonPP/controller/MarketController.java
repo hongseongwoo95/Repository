@@ -65,12 +65,6 @@ public class MarketController {
 		model.addAttribute(number, model);
 		return "Market_Product";
 	}
-	
-	
-	@GetMapping("/InfoPointplace")
-	public String InfoPointplace() {
-		return "Info_Pointplace";
-	}
 	   
 	@GetMapping("/Market_Product/MarketShipping/{number}") // 마켓상품 상세정보에서 바로구매 클릭시 매핑
 	public String getShippingProduct(HttpSession session, @PathVariable String number, Model model) {

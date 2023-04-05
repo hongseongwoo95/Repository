@@ -86,7 +86,7 @@
 							<div><span>합계</span></div>
 							<div><span>0원</span></div>
 						</div><br>
-						<button class="order_button" onclick="showPopup()">주문하기</button>
+						<button class="order_button" onclick="showPopup(event)">주문하기</button>
 					</div>
 				</div>
 			</form>
@@ -126,11 +126,13 @@
 			</div>
 		</article>
 	</div>
-	<script>
-	function showPopup() {
-		  alert("상품이 주문되었습니다.");
-		}
-	</script>
+<script>
+function showPopup(event) {
+    event.preventDefault(); // 이벤트 막기
+    alert("상품이 주문되었습니다.");
+    location.href = "/ChangwonPP/MarketMain"; // 이동할 URL
+}
+</script>
 </body>
 
 </html>

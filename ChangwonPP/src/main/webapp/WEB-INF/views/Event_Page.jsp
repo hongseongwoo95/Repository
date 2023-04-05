@@ -19,14 +19,15 @@
             <div class="alarm">
                <img src="<c:url value="/resources/images/Event/alarm.PNG"/>"/>
                 <div>
-                    <p class="alarm_title">D-15</p>
-                    <p class="alarm_content">진해 군항제 2월 15일 ~ 27일</p>
-                    <p class="alarm_content">장소 : 진해 로타리</p>
+                    <p class="alarm_title">D-5</p>
+                    <p class="alarm_content">마산 국화축제</p>
+                    <p class="alarm_content">2023-04-10 ~ 2023-04-17</p>
+                    <p class="alarm_content">경남 창원시 마산합포구 돝섬1길 9</p>
                 </div>
             </div>
             <br>
             <div class="topbtn">
-	            <h2>최근 행사</h2>
+	            <h2>행사정보</h2>
 	            <c:if test="${m_id != null && m_type == 2 }">
 	            	<a href="Event_Upload" class="upload">업로드</a>
 	            </c:if>

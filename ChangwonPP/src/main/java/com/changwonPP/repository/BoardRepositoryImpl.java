@@ -31,7 +31,7 @@ public class BoardRepositoryImpl implements BoardRepository {
 	}
 
 	@Override // 게시판을 조회하고 각 페이지에 보여줄 게시글 갯수를 제한하는 기능
-	public void getPerPageBorardList(int page, Model model) {
+	public void getPerPageBoardList(int page, Model model) {
 		int numPerPage = 10; // 페이지당 출력할 게시글 수
 		int start = (page - 1) * numPerPage; // 시작 인덱스 계산
 		LocalDate now = LocalDate.now(); // 시간 계산을 위한 LocalDate 클래스 객체 생성

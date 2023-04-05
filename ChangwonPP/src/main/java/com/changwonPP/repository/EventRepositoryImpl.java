@@ -30,8 +30,6 @@ public class EventRepositoryImpl implements EventRepository {
       this.template = new JdbcTemplate(dataSource);
    }
 
-   private List<Event> listOfEvent = new ArrayList<Event>();
-
    @Override //모든 이벤트 가져오는 기능
    public List<Event> getAllEvent() {
       String SQL =  " SELECT event.*, Event_Multiple.file_name FROM event \r\n"
@@ -50,11 +48,17 @@ public class EventRepositoryImpl implements EventRepository {
    
    @Override // 행사 업로드 기능
    public void setNewEvent(Event event, Event_Multiple event_multiple) throws IOException {
-
+	  String e_money;
+	  if(event.getE_money().equals("0")) {
+		    e_money = "무료";
+		} else {
+		    e_money = event.getE_money();
+		}
+	  
       String SQL = "INSERT INTO event (e_name, e_title, e_date1, e_date2, e_addr, e_agency, e_telephone, e_money, e_mapX, e_mapY) "
             + "VALUES(?,?,?,?,?,?,?,?,?,?)";
       template.update(SQL, event.getE_name(), event.getE_title(), event.getE_date1(), event.getE_date2(),
-            event.getE_addr(), event.getE_agency(), event.getE_telephone(), event.getE_money(), event.getE_mapX(), event.getE_mapY());
+            event.getE_addr(), event.getE_agency(), event.getE_telephone(), e_money, event.getE_mapX(), event.getE_mapY());
 
       // 추가된 이벤트의 번호를 구합니다.
       String selectSQL = "SELECT LAST_INSERT_ID()";

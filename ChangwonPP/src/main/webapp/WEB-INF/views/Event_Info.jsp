@@ -40,7 +40,16 @@
          <ul>
             <li><i class="fas fa-cog"></i>담당기관 : ${event.e_agency}</li>
             <li><i class="fas fa-phone-alt"></i>전화번호 :${event.e_telephone}</li>
-            <li><i class="fas fa-won-sign"></i>이용료 : ${event.e_money}</li>
+            <li><i class="fas fa-won-sign"></i>이용료 : 
+			  <c:choose>
+			    <c:when test="${event.e_money eq '무료'}">
+			      ${event.e_money}
+			    </c:when>
+			    <c:otherwise>
+			      ${event.e_money}원
+			    </c:otherwise>
+			  </c:choose>
+			</li>
          </ul>
       </div>
       <div class="event_map">

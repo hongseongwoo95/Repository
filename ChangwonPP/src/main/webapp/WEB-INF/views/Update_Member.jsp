@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Update_Member</title>
+<title>My_Profile</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
         <div class="logo_box">
             <a href="/ChangwonPP/"><img src="<c:url value="/resources/images/Nav/Changwon PP logo1.png"/>" class="mainlogo"></a>
         </div>
-        <h2>정보수정</h2>
+        <h2>내 정보</h2>
         <br>
         <hr><br>
         <form:form modelAttribute="Update" action="MainPage" method="post"> <!-- 회원정보 수정 기능. mapping시켜서 처리할 예정 -->
@@ -50,7 +50,7 @@
             <h4>성별</h4>
             <form:radiobutton path="" id="male" class="radio" onclick="return false" readonly="true"/>남성
             <form:radiobutton path="" id="female" class="radio" onclick="return false" readonly="true"/>여성
-            <input type="submit" value="정보수정" class="submit">
+            <!-- <input type="submit" value="정보수정" class="submit"> -->
         </form:form>
     </div>
 </body>

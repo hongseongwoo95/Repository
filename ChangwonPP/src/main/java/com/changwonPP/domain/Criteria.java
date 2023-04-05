@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 public class Criteria { // 페이지 자체를 관리하는 객체. 페이지 당 보여줄 게시글 갯수를 담당함.
 	private int page; // 현재 페이지 번호
 	private int perPageNum; // 페이지당 출력할 게시글 갯수
-	private int startNum; // 시작 페이지 번호
 	
 	public int getPageStart() { // 페이지 범위를 구하는 기능. (0~10, 10~20 .... )
 		return (this.page-1)*perPageNum;

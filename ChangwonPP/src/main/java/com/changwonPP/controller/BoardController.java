@@ -37,7 +37,7 @@ public class BoardController {
 	    
 	    paging.setCri(cri);
 	    paging.setTotalCount(boardListCnt); // 페이징 객체에 전체 게시글 수 저장
-	    boardDAO.getPerPageBorardList(1, model);
+	    boardDAO.getPerPageBoardList(1, model);
 
 	    List<Map<String, Object>> list = boardDAO.getBoardList(cri);
 
@@ -59,7 +59,7 @@ public class BoardController {
 	    model.addAttribute("paging", paging);
 	    model.addAttribute("page", num); // view에서 현재 page와 비교해서 "이전", "다음" 버튼을 출력하려고 model에 num 값 저장
 	    
-	    boardDAO.getPerPageBorardList(num, model); 
+	    boardDAO.getPerPageBoardList(num, model); 
 	    return "Board";
 	}
 	

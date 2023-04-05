@@ -57,9 +57,9 @@
             </div>
             <br> <br>
             <div class="price">
-               <h2>브랜드</h2>
+               <h2>판매처</h2>
                &nbsp;&nbsp;&nbsp;&nbsp; 
-               <form:input type="text" path="p_brand" placeholder="브랜드명을 입력해주세요" class="priceinput"/>
+               <form:input type="text" path="p_brand" placeholder="판매처를 입력해주세요" class="priceinput"/>
             </div>
             <br> <br>
    

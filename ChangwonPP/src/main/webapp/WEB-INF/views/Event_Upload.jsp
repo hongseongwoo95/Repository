@@ -80,8 +80,8 @@
             <div id='att_zone'
                data-placeholder='파일을 첨부 하려면 파일 선택 버튼을 클릭하거나 파일을 드래그앤드롭 하세요'></div>
          </div> <br>
-            <h3>행사 타이틀</h3>
-            <p class="p_input"><form:input type="text" path="e_title" placeholder="타이틀을 입력해주세요" class="inputbox" /></p>
+            <h3>행사설명</h3>
+            <p class="p_input"><form:input type="text" path="e_title" placeholder="행사 설명을 입력해주세요" class="inputbox" /></p>
             <h3>축제기간</h3>
             <p class="p_input"><form:input type="date" path="e_date1" min="2023-01-01" max="2025-01-01" class="inputdate"/>
                 ~ <form:input type="date" path="e_date2" min="2023-01-01" max="2025-01-01" class="inputdate"/></p>
@@ -93,8 +93,8 @@
             <h3>이용요금</h3>
             <p class="p_input"><form:input type="text" path="e_money" placeholder="이용료를 입력해주세요" class="inputbox" maxlength="15"
            		 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" /></p>
-            <h3>지도</h3>
-            <p class="p_input"><form:input type="text" path="e_addr" id="sample5_address" placeholder="주소" class="inputbox" readonly="true"/></p>
+            <h3>주소</h3>
+            <p class="p_input"><form:input type="text" path="e_addr" id="sample5_address" placeholder="주소 검색을 이용해주세요" class="inputbox" readonly="true"/></p>
             <input type="button" onclick="sample5_execDaumPostcode()" value="주소 검색"><br>
             <div id="map" style="width:400px; height:300px; margin-top:10px;display:none"></div>
             <p class="p_input"> <input type="submit" value="등록" class="submitbutton"></p>

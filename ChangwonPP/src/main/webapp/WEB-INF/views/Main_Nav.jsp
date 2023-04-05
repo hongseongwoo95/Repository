@@ -48,20 +48,20 @@
         <br>
         <div class="header2">
             <ul class="menu">
+            	<li class="menu1">
+                    <a href="<c:url value="/AboutCompany"/>">회사소개</a>
+                </li>
                 <li class="menu1">
                     <a href="<c:url value="/Board"/>">공지사항</a>
+                </li>
+                <li class="menu1">
+                    <a href="<c:url value="/EventPage"/>">행사정보</a>
                 </li>
                 <li class="menu1">
                     <a href="<c:url value="/Cardnews"/>">카드뉴스</a>
                 </li>
                 <li class="menu1">
-                    <a href="<c:url value="/EventPage"/>">행사</a>
-                </li>
-                <li class="menu1">
-                    <a href="<c:url value="/AboutCompany"/>">회사소개</a>
-                </li>
-                <li class="menu1">
-                    <a href="<c:url value="/MarketMain"/>">플리:마켓</a>
+                    <a href="<c:url value="/MarketMain"/>">플리마켓</a>
                 </li>
             </ul>
         </div>

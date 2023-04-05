@@ -36,7 +36,7 @@
       <br>
       <section>
          <h2>
-            <a href="Cardnews">카드뉴스</a>
+            <a href="Cardnews">최신뉴스</a>
          </h2>
          <br>
          <br>
