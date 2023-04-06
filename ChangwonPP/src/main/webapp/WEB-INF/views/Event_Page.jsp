@@ -17,12 +17,23 @@
     <div class="container">
         <section>
             <div class="alarm">
-               <img src="<c:url value="/resources/images/Event/alarm.PNG"/>"/>
-                <div>
-                    <p class="alarm_title">D-5</p>
-                    <p class="alarm_content">마산 국화축제</p>
-                    <p class="alarm_content">2023-04-10 ~ 2023-04-17</p>
-                    <p class="alarm_content">경남 창원시 마산합포구 돝섬1길 9</p>
+               <a href="/ChangwonPP/EventInfo/${recent.e_number}"><img src="<c:url value="/resources/images/Event/d-day.png"/>"/></a>
+                <div class="alarm_box">
+                	<div>
+	                    <p class="alarm_title">${recent.e_name }</p>
+	                    <c:choose>
+	                    	<c:when test="${dday < 0 }">
+	                    		<p class="alarm_content">행사기간 종료</p>
+	                    	</c:when>
+	                    	<c:when test="${dday eq 0 }">
+	                    		<p class="alarm_content"> ${recent.e_date1 } ~ ${recent.e_date2}</p>
+	                    	</c:when>
+	                    	<c:otherwise>
+	                    		<p class="alarm_content">D-${dday }</p>
+	                    	</c:otherwise>
+	                    </c:choose>
+	                    <p class="alarm_content">${recent.e_addr }</p>
+                    </div>
                 </div>
             </div>
             <br>

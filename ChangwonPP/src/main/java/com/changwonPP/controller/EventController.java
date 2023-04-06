@@ -42,6 +42,7 @@ public class EventController {
 	@GetMapping("/EventPage") // 행사 게시판 접근시 매핑됨
 	   public String EventMethod(Model model) {
 	      List<Event> listOfEvent = EventDAO.getAllEvent();
+	      EventDAO.getRecentEvent(model); // 가장 최근 행사 하나만 가져와서 D-day 가공하는 메서드 호출
 	      model.addAttribute("EventList", listOfEvent);
 	      return "Event_Page";
 	   }

@@ -131,7 +131,7 @@ public class BoardRepositoryImpl implements BoardRepository {
 		String b_writer = (String) session.getAttribute("m_id"); // 세션에 저장된 m_id 값을 가져와서 형변환하고 변수에 담아서 database에 작성자로
 																	// 저장.
 		String SQL = "INSERT INTO board(b_title, b_content, b_writer) VALUES (?,?,?)";
-
+		
 		template.update(SQL, board.getB_title(), board.getB_content(), b_writer);
 
 	}

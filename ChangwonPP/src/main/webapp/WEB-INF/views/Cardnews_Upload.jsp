@@ -82,16 +82,52 @@
    <jsp:include page="Main_Footer.jsp" />
   <script>
         function readURL(input) {
-if (input.files && input.files[0]) {
-    var reader = new FileReader();
-    reader.onload = function(e) {
-    document.getElementById('preview').src = e.target.result;
-    };
-    reader.readAsDataURL(input.files[0]);
-} else {
-    document.getElementById('preview').src = "";
-}
-}
+			if (input.files && input.files[0]) {
+			    var reader = new FileReader();
+			    reader.onload = function(e) {
+			    document.getElementById('preview').src = e.target.result;
+			    };
+			    reader.readAsDataURL(input.files[0]);
+			} else {
+			    document.getElementById('preview').src = "";
+			}
+		}
+        
+        
+        
+        let oEditors = []
+        
+        smartEditor = function() { // 네이버 스마트에디터 스킨 설정
+          console.log("Naver SmartEditor")
+          nhn.husky.EZCreator.createInIFrame({
+            oAppRef: oEditors,
+            elPlaceHolder: "editorTxt",
+            sSkinURI: "./resources/smarteditor/SmartEditor2Skin.html",
+            fCreator: "createSEditor2"
+          })
+        }
+    
+        $(document).ready(function() {
+       	  smartEditor();
+
+       	  $("#submitPost").on("click", function() { // 제이쿼리로 form에 값을 입력하면 값을 불러올 수 있게 메서드 호출
+       	    submitPost();
+       	  });
+       	});
+
+        
+        submitPost = function() { // form으로 입력한 값을 불러오는 메서드
+		  oEditors.getById["editorTxt"].exec("UPDATE_CONTENTS_FIELD", [])
+		  let content = document.getElementById("editorTxt").value
+		
+		  if(content == '') {
+		    alert("내용을 입력해주세요.")
+		    oEditors.getById["editorTxt"].exec("FOCUS")
+		    return
+		  } else {
+		    console.log(content)
+		  }
+		}
 </script>
 </body>
 </html>

@@ -2,6 +2,8 @@ package com.changwonPP.repository;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -115,6 +117,24 @@ public class EventRepositoryImpl implements EventRepository {
     this.EventList = listOfEvent;
       return listOfEvent;
    }
+
+	@Override
+	public void getRecentEvent(Model model) { // 가장 최근의 이벤트를 이름, 날짜, 주소만 받아오는 메서드.
+		LocalDate now = LocalDate.now();
+		String SQL = "SELECT * from Event ORDER BY e_date1 DESC LIMIT 1";
+		
+		EventList = template.query(SQL, new EventRowMapper());
+		
+		for(Event event : EventList) {
+			LocalDate eventDate = LocalDate.parse(event.getE_date1());
+			long days = ChronoUnit.DAYS.between(now, eventDate);
+
+			model.addAttribute("dday", days);	
+			model.addAttribute("recent", event);
+		}
+		
+	
+	}
 
 
 

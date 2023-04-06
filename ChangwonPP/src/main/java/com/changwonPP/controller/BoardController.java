@@ -79,6 +79,7 @@ public class BoardController {
 	@PostMapping("/Post") // 게시글 작성 기능
 	public String NewPostMethod(@ModelAttribute("NewPost") Board board, HttpServletRequest req) {
 		boardDAO.addNewPost(board, req);
+		
 		return "redirect:/Board";
 	}
 }
