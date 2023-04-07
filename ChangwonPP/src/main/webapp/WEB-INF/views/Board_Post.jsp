@@ -24,7 +24,7 @@
             <form:input path="b_title" size="40" placeholder="제목을 입력해주세요" class="post_title_input" required="required"/>
             
             <p class="post_text">내용</p>
-            <div id="smarteditor">
+            <div id="smarteditor"> <!-- 네이버 스마트 에디터 2.0 적용 -->
 	       		<form:textarea path="b_content" id="editorTxt" rows="20" cols="10"  placeholder="내용을 입력해주세요" style="width: 100%; height: 500px;" 
 	       		required="required"></form:textarea>
 	   	   </div>
@@ -36,7 +36,6 @@
     </div>
     <br><br><br><br><br><br><br><br><br>
     <jsp:include page="Main_Footer.jsp" />
-    <!-- textarea에 필요시 wysiwyg 에디터 적용할 것. (네이버 스마트 에디터 2.0 or API)  -->
     
     <script>
         let oEditors = []

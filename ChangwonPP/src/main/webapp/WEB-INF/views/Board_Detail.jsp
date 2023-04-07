@@ -36,7 +36,11 @@
 					<c:if test="${nextNum <= boardlist.size()}">
 						<li><a href="<c:url value='/BoardDetail/${nextNum}'/>">다음글</a></li>
 					</c:if>
-					<li><a href="/ChangwonPP/Board">글목록</a></li>
+					<li><a href="/ChangwonPP/Board/{num}" onclick="goToList()">글목록</a></li>
+				</ul>
+				<ul>
+					<li><a href="/ChangwonPP/Board">수정</a></li>
+					<li><a href="/ChangwonPP/Board">삭제</a></li>
 				</ul>
             </div>
             <div class="board_text">${board.b_content }</div>
@@ -44,5 +48,16 @@
     </div>
     <br>
     <jsp:include page="Main_Footer.jsp" />
+<script>
+function goToList() {
+  // 현재 URL에서 게시판 ID와 게시글 ID 추출
+  var currentUrl = window.location.href; // 현재 URL 가져오기
+  var boardId = currentUrl.split('/')[4]; // URL에서 게시판 ID 추출
+  var postId = currentUrl.split('/').pop(); // URL에서 마지막 부분 추출 (게시글 ID)
+  
+  // URL 인코딩 적용하여 게시판 목록 페이지로 이동
+  window.location.href = "/ChangwonPP/Board/" + encodeURIComponent({num});
+}
+</script>
 </body>
 </html>

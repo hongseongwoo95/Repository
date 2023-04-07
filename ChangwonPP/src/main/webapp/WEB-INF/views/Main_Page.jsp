@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+
 <head>
 <link rel="stylesheet" href="./resources/css/Main_Page.css" />
 <script src="https://kit.fontawesome.com/380c1469b3.js" crossorigin="anonymous"></script>

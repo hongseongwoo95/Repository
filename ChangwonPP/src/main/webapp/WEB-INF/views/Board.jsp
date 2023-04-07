@@ -39,7 +39,7 @@
 				</tbody>
 			</table>
 			<div class="tbot">
-				<div class="page">
+				<div class="page"> <!-- 게시판 페이지 넘버가 생성되는 부분 -->
 					<ul class="page_select">
 						<c:if test="${paging.prev eq true}">
 					        <li><a href='<c:url value="/Board/${paging.startPage - 1}"/>'>&lt;</a></li>

@@ -1,80 +1,42 @@
-<!DOCTYPE html>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-         /* 전체 초기화 */
-         * {
-            margin: 0;
-            padding: 0;
-            text-decoration: none;
-            list-style: none;
-            color: black;
-        }
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="./resources/css/Cardnews_Upload.css" />
+<script type="text/javascript" src="./resources/smarteditor/js/jquery-3.6.4.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="./resources/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cardnews_Upload</title>
 
-        /* 컨테이너 */
-        .container {
-            width: 70%;
-            margin: 0 auto;
-        }
-        /*사진담는 박스*/
-        #preview{
-            width: 40%;
-            height: 300px;
-        }
-        .newsname{
-            display: flex;
-        }
-        .newsnameinput{
-            margin-left: 3%;
-            width: 500px;
-            height: 30px;
-        }
-        #details{
-            width: 70%;
-            height: 400px;
-            padding: 20px 20px;
-            
-        }
-        /*등록, 취소 버튼*/
-        .last{
-            display: flex;
-            justify-content: right;
-            margin-right: 30%;
-        }
-        .lastbutton{
-            width: 120px;
-            height: 30px;
-        }
-
-    </style>
-    <title>Cardnews_Upload</title>
 </head>
+
 <body>
-<jsp:include page="Main_Nav.jsp" />
+	<jsp:include page="Main_Nav.jsp"/>
     <div class="container">
         <form:form action="CardnewsUpload" method="post" modelAttribute="News" enctype="multipart/form-data" class="middle">
-            <h1>카드뉴스 등록</h1> <br><br>
+            <h1>카드뉴스 등록</h1> <br>
             <div>
                  <img id="preview" /> <br><br>
                     <form:input type="file" path="imgfile" id="imgfile" onchange="readURL(this);"/> 
                     <label for="imgfile">
                     </label>
-            </div><br><br>
+            </div><br>
             <div class="newsname">
-                <h2>뉴스제목</h2>
+                <h2>뉴스제목</h2><br>
                 <form:input type="text" path="news_name" placeholder="뉴스제목을 입력해주세요" class="newsnameinput"/>
-            </div><br><br>
+            </div><br>
             <h2>뉴스내용등록</h2> <br>
-            <form:textarea path="news_content" id="details" placeholder="내용을 입력해주세요"></form:textarea> <br><br>
+            <div id="smarteditor" style="width: 800px">
+	       		<form:textarea path="news_content" id="editorTxt" class="details" rows="20" cols="10"  placeholder="내용을 입력해주세요" style="width: 70%; height: 500px;" 
+	       		required="required"></form:textarea>
+	   	   </div>
             <div class="last">
-                <input type="submit" value="등록" class="lastbutton">
-                <input type="reset" value="취소" class="lastbutton">
+                <input type="submit" value="등록" class="lastbutton" id="submitPost">
+                <a href="<c:url value="/Cardnews"/>" class="btn-reset lastbutton">취소</a>
             </div>
         </form:form>
     </div>
@@ -101,7 +63,7 @@
           console.log("Naver SmartEditor")
           nhn.husky.EZCreator.createInIFrame({
             oAppRef: oEditors,
-            elPlaceHolder: "editorTxt",
+            elPlaceHolder: "editorTxt", // form:textarea의 id에 해당하는 값. 이게 일치해야 스킨이 적용됨.
             sSkinURI: "./resources/smarteditor/SmartEditor2Skin.html",
             fCreator: "createSEditor2"
           })

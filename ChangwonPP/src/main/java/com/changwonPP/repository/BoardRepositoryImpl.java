@@ -76,7 +76,7 @@ public class BoardRepositoryImpl implements BoardRepository {
 				cri.getPerPageNum());
 	}
 
-	@Override // 게시글 제목을 클릭해서 게시글 상세정보로 넘어갈 때 글 번호에 맞는 게시글을 불러오는 기능
+	@Override // 게시글 상세정보 기능. 글 번호에 맞는 게시글을 불러옴.
 	public void searchBoardDetail(String num, Model model) {
 		Board boardInfo = null; // 결과값을 담을 변수 생성
 		int numInt = Integer.parseInt(num); // model에 있는 String b_num을 형변환

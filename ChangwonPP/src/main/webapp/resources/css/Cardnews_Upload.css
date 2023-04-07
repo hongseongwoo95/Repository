@@ -1,0 +1,56 @@
+ /* 전체 초기화 */
+ * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+
+/* 컨테이너 */
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+/*사진담는 박스*/
+#preview{
+    width: 40%;
+    height: 300px;
+    border:1px solid rgb(102,102,102);
+}
+.newsnameinput{
+    margin-top: 5px;
+    width: 500px;
+    height: 30px;
+}
+/* .details{
+    width: 70%;
+    height: 400px;
+    padding: 20px 20px;
+    
+} */
+/*등록, 취소 버튼*/
+.last{
+    display: flex;
+    justify-content: right;
+    margin-right: 30%;
+}
+.lastbutton{
+    width: 120px;
+    height: 30px;
+}
+
+.btn-reset{
+	margin-left: 2px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	background-color: buttonface;
+	border: 1px solid rgb(128,128,128);
+	font-size:13.3px;
+	box-sizing: border-box;
+}
+.btn-reset:hover {
+	background-color: rgb(229,229,229);
+}

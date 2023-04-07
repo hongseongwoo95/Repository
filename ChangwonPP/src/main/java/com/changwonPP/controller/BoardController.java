@@ -43,7 +43,7 @@ public class BoardController {
 
 	    model.addAttribute("list", list);    
 	    model.addAttribute("paging", paging); 
-	    return "Board";
+	    return "redirect:/Board/1";
 	}
 	
 	@GetMapping("/Board/{num}") // 페이지 버튼을 클릭했을 때 발생하는 매핑 처리
@@ -65,7 +65,6 @@ public class BoardController {
 	
 	@GetMapping("/BoardDetail/{num}") // 게시글 상세보기 기능
 	public String BoardDetailMethod(@PathVariable String num, Model model) {
-		
 		boardDAO.searchBoardDetail(num, model);
 		
 		return "Board_Detail";
@@ -77,9 +76,14 @@ public class BoardController {
 	}
 	
 	@PostMapping("/Post") // 게시글 작성 기능
-	public String NewPostMethod(@ModelAttribute("NewPost") Board board, HttpServletRequest req) {
+	public String InsertPostMethod(@ModelAttribute("NewPost") Board board, HttpServletRequest req) {
 		boardDAO.addNewPost(board, req);
 		
+		return "redirect:/Board";
+	}
+	
+	@GetMapping("/Update")
+	public String UpdatePostMethod(Model model) {
 		return "redirect:/Board";
 	}
 }
