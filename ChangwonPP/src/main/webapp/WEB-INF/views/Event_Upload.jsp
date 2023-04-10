@@ -77,8 +77,7 @@
          <div id='image_preview'>
             <h3>이미지 미리보기</h3>
             <form:input type='file' path="imgfile" id='btn_file' multiple='multiple'/>
-            <div id='att_zone'
-               data-placeholder='파일을 첨부 하려면 파일 선택 버튼을 클릭하거나 파일을 드래그앤드롭 하세요'></div>
+            <div id='att_zone' data-placeholder='파일을 첨부 하려면 파일 선택 버튼을 클릭하거나 파일을 드래그앤드롭 하세요'></div>
          </div> <br>
             <h3>행사설명</h3>
             <p class="p_input"><form:input type="text" path="e_title" placeholder="행사 설명을 입력해주세요" class="inputbox" /></p>
@@ -146,7 +145,7 @@
                 var files = {};
                 e.preventDefault();
                 e.stopPropagation();
-                var dt = e.dataTransfer;
+                var dt = e.dataTransfer; // 드래그앤드롭의 정보를 가지고 있는 데이터트랜스퍼 객체 생성
                 files = dt.files;
                 for(f of files){
                   imageLoader(f);
@@ -156,7 +155,7 @@
               }, false)
               
 
-              /*첨부된 이미리즐을 배열에 넣고 미리보기 */
+              /*첨부된 이미지들을 배열에 넣고 미리보기 */
               imageLoader = function(file){
                   fileZone.replaceChildren();
                 sel_files.push(file);
@@ -225,7 +224,7 @@
         });
 
 
-        function sample5_execDaumPostcode() {
+        function sample5_execDaumPostcode() { // 카카오 주소 API
             new daum.Postcode({
                 oncomplete: function (data) {
                     var addr = data.address; // 최종 주소 변수

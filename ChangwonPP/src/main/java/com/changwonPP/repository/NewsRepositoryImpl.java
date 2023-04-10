@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 
 import com.changwonPP.domain.News;
+import com.changwonPP.mapper.NewsRowMapper;
 
 @Repository
 public class NewsRepositoryImpl implements NewsRepository{

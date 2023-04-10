@@ -12,14 +12,14 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Board_Post</title>
- 
+<title>Board_Update</title>
+
 </head>
 
 <body>
 	<jsp:include page="Main_Nav.jsp" />
     <div class="container">
-        <form:form modelAttribute="NewPost" action="Post" class="postarea">
+        <form:form modelAttribute="Update" action="Post" class="postarea">
             <p class="post_text">제목</p>
             <form:input path="b_title" size="40" placeholder="제목을 입력해주세요" class="post_title_input" required="required"/>
             

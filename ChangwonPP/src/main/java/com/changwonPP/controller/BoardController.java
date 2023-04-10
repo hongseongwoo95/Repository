@@ -78,12 +78,17 @@ public class BoardController {
 	@PostMapping("/Post") // 게시글 작성 기능
 	public String InsertPostMethod(@ModelAttribute("NewPost") Board board, HttpServletRequest req) {
 		boardDAO.addNewPost(board, req);
-		
 		return "redirect:/Board";
 	}
 	
-	@GetMapping("/Update")
-	public String UpdatePostMethod(Model model) {
+	@GetMapping("/Update") // 게시글 수정 매핑
+	public String UpdateGetMethod(@ModelAttribute("Update") Board board, @PathVariable String num, Model model) {
+		/* Board board = boardDAO. */
+		return "Board_Update";
+	}
+	
+	@PostMapping("/Update") // 게시글 수정 화면에서 수정 버튼 클릭시 처리
+	public String UpdatePostMethod(@ModelAttribute("Update") Board board, @PathVariable String num, Model model) {
 		return "redirect:/Board";
 	}
 }

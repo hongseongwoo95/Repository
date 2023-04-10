@@ -136,7 +136,7 @@ public class Member {
 	}
 
 	public int getM_postnum() {
-		return m_postnum;
+		 return m_postnum;
 	}
 
 	public void setM_postnum(int m_postnum) {

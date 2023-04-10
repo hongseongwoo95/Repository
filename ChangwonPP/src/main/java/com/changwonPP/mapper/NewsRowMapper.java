@@ -1,4 +1,4 @@
-package com.changwonPP.repository;
+package com.changwonPP.mapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

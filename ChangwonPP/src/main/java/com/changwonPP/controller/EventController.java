@@ -22,12 +22,12 @@ public class EventController {
 	@Autowired // 게시글 관리에 사용할 DAO 객체 생성
 	private EventRepository EventDAO;
 
-	@GetMapping("/Event_Upload")
+	@GetMapping("/Event_Upload") // 행사 업로드 매핑
 	public String getEventUpload(@ModelAttribute("Event") Event event) {
 		return "Event_Upload";
 	}
 
-	@PostMapping("/Event_Upload") // 다중파일 DB업로드
+	@PostMapping("/Event_Upload") // 다중파일 업로드 처리
 	public String setEventUpload(@ModelAttribute("Event") Event event, Event_Multiple event_multiple)
 			throws IOException {
 		try {
@@ -39,12 +39,12 @@ public class EventController {
 	}
 
 	
-	@GetMapping("/EventPage") // 행사 게시판 접근시 매핑됨
+	@GetMapping("/EventPage") // 행사 게시판 접근시 매핑
 	   public String EventMethod(Model model) {
-	      List<Event> listOfEvent = EventDAO.getAllEvent();
-	      EventDAO.getRecentEvent(model); // 가장 최근 행사 하나만 가져와서 D-day 가공하는 메서드 호출
-	      model.addAttribute("EventList", listOfEvent);
-	      return "Event_Page";
+		EventDAO.getRecentEvent(model); // 가장 최근 행사 하나만 가져와서 D-day 가공하는 메서드 호출
+		List<Event> listOfEvent = EventDAO.getAllEvent();
+		model.addAttribute("EventList", listOfEvent);
+		return "Event_Page";
 	   }
 	
 	@GetMapping("/EventInfo/{number}") // 행사 게시글 상세보기 기능

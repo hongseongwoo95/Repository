@@ -20,6 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.changwonPP.domain.Event;
 import com.changwonPP.domain.Event_Multiple;
+import com.changwonPP.mapper.EventRowMapper;
 
 @Transactional
 @Repository

@@ -12,6 +12,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.changwonPP.domain.Member;
+import com.changwonPP.mapper.MemberRowMapper;
 
 @Repository
 public class MemberRepositoryImpl implements MemberRepository {

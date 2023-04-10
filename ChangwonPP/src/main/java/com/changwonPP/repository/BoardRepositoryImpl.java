@@ -18,6 +18,7 @@ import org.springframework.ui.Model;
 
 import com.changwonPP.domain.Board;
 import com.changwonPP.domain.Criteria;
+import com.changwonPP.mapper.BoardRowMapper;
 
 @Repository
 public class BoardRepositoryImpl implements BoardRepository {

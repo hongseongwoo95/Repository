@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 
 import com.changwonPP.domain.Product;
+import com.changwonPP.mapper.ProductRowMapper;
 
 @Repository
 public class ProductRepositoryImpl implements ProductRepository{

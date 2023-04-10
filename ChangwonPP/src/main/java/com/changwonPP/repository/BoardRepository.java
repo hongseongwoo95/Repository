@@ -16,4 +16,5 @@ public interface BoardRepository {
 	void getPerPageBoardList(int page, Model model);
 	int getBoardListCnt() throws Exception;
 	List<Map<String, Object>> getBoardList(Criteria cri) throws Exception;
+	/* void getBoardById() 이 부분 수정하다 말았음 */
 }
